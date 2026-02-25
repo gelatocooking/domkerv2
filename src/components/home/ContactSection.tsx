@@ -1,14 +1,37 @@
 ﻿"use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const timeWindowOptions = ["Dzis", "Jutro", "W tym tygodniu"];
 
 export function ContactSection() {
   const [timeWindow, setTimeWindow] = useState<string>(timeWindowOptions[0]);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0]?.isIntersecting) return;
+        setIsVisible(true);
+        observer.unobserve(node);
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="contact-section" aria-labelledby="contact-heading">
+    <section
+      ref={sectionRef}
+      className={`contact-section ${isVisible ? "is-visible" : ""}`}
+      aria-labelledby="contact-heading"
+    >
       <div className="contact-head">
         <p className="contact-eyebrow">KONTAKT</p>
         <h2 id="contact-heading">Pilny termin? Zostaw szybkie zgloszenie</h2>
