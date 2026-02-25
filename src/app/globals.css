@@ -113,47 +113,17 @@ a {
 }
 
 .menu-toggle-icon {
-  width: 19px;
-  height: 14px;
-  position: relative;
+  width: 20px;
+  height: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-.menu-toggle-icon span {
-  position: absolute;
-  width: 100%;
-  height: 1.8px;
-  border-radius: 2px;
-  background: currentColor;
-  transition: transform 0.22s ease, opacity 0.2s ease, top 0.22s ease;
-}
-
-.menu-toggle-icon span:nth-child(1) {
-  top: 0;
-}
-
-.menu-toggle-icon span:nth-child(2) {
-  top: 6px;
-}
-
-.menu-toggle-icon span:nth-child(3) {
-  top: 12px;
-}
-
-.menu-toggle-icon.is-open span:nth-child(1) {
-  top: 6px;
-  transform: rotate(45deg);
-}
-
-.menu-toggle-icon.is-open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle-icon.is-open span:nth-child(3) {
-  top: 6px;
-  transform: rotate(-45deg);
+.menu-toggle-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
 }
 
 .main-nav {
@@ -196,8 +166,10 @@ a {
   background: #f1f6f2;
 }
 
-.nav-dropdown > button span {
-  font-size: 20px;
+.nav-dropdown-chevron {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.9;
   transform: translateY(1px);
 }
 
@@ -511,8 +483,12 @@ a.hero-main-cta:active {
   flex: 0 0 auto;
   background: #00928C;
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
+}
+
+.photo-point-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.3;
 }
 
 .photo-point-card::after {
@@ -1283,6 +1259,12 @@ a.hero-main-cta:active {
   transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
 
+.risk-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.2;
+}
+
 .risk-nav-btn:hover {
   border-color: rgba(0, 146, 140, 0.65);
   background: rgba(0, 146, 140, 0.14);
@@ -1365,10 +1347,15 @@ a.hero-main-cta:active {
   border-radius: 50%;
   background: #00928C;
   color: #ffffff;
-  font-size: 0.78rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.risk-effect-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.3;
 }
 
 @media (max-width: 1280px) {

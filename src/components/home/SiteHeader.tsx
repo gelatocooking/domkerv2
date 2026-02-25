@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -58,10 +59,8 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
           aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
-          <span className={`menu-toggle-icon ${isMenuOpen ? "is-open" : ""}`} aria-hidden="true">
-            <span />
-            <span />
-            <span />
+          <span className="menu-toggle-icon" aria-hidden="true">
+            {isMenuOpen ? <X /> : <Menu />}
           </span>
         </button>
 
@@ -78,7 +77,7 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
               onClick={() => setIsServicesOpen((prev) => !prev)}
             >
               Usługi dla firm
-              <span aria-hidden="true">▾</span>
+              <ChevronDown className="nav-dropdown-chevron" aria-hidden="true" />
             </button>
             <div className="dropdown-menu">
               {serviceMenu.map((item) => (
@@ -124,3 +123,4 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
     </header>
   );
 }
+

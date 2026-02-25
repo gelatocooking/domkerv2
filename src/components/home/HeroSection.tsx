@@ -1,3 +1,4 @@
+import { CircleCheck } from "lucide-react";
 import Link from "next/link";
 
 export function HeroSection({ chips }: { chips: string[] }) {
@@ -7,8 +8,8 @@ export function HeroSection({ chips }: { chips: string[] }) {
         <p className="hero-label">B2B • Budowy / Remonty • Sieci • Cała Polska</p>
         <h1>Sprzątanie pod odbiory i przekazanie obiektu</h1>
         <p className="hero-lead">
-          Działamy jak wykonawca: terminy, standard i wiele lokalizacji. Chronimy nowe
-          wykończenia i zostawiamy obiekt gotowy do odbioru.
+          Działamy jak wykonawca: terminy, standard i wiele lokalizacji. Chronimy nowe wykończenia
+          i zostawiamy obiekt gotowy do odbioru.
         </p>
 
         <div className="hero-cta-row">
@@ -30,7 +31,7 @@ export function HeroSection({ chips }: { chips: string[] }) {
             {chips.map((chip, index) => (
               <article key={chip} className={`photo-point-card point-${index + 1}`}>
                 <span className="photo-point-icon" aria-hidden="true">
-                  ✓
+                  <CircleCheck />
                 </span>
                 <p>{chip}</p>
               </article>

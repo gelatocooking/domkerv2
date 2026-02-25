@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import { useRef } from "react";
 import type { RiskCard } from "./types";
 
@@ -39,7 +40,7 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
             aria-label="Poprzednie ryzyko"
             onClick={() => scrollRisksByOne(-1)}
           >
-            ‹
+            <ChevronLeft />
           </button>
           <button
             type="button"
@@ -47,7 +48,7 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
             aria-label="Następne ryzyko"
             onClick={() => scrollRisksByOne(1)}
           >
-            ›
+            <ChevronRight />
           </button>
         </div>
 
@@ -59,7 +60,7 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
               <p>{card.description}</p>
               <div className="risk-card-effect">
                 <span className="risk-effect-icon" aria-hidden="true">
-                  ✓
+                  <ShieldCheck />
                 </span>
                 <span>{card.effect}</span>
               </div>
