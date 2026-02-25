@@ -16,7 +16,9 @@
   font-family: var(--font-geist-sans);
   background-color: var(--background);
 }
-
+.hero-label {
+  background: var(--accent) !important;
+}
 .main {
   display: flex;
   min-height: 100vh;
@@ -84,7 +86,7 @@
 }
 
 a.primary {
-  background: var(--text-primary);
+  background: var(--accent);
   color: var(--background);
   gap: 8px;
 }
