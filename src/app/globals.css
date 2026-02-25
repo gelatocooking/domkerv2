@@ -271,10 +271,26 @@ a.header-cta:active {
 }
 
 .hero-section {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 34px;
   align-items: center;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  right: -160px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 146, 140, 0.14) 0%, rgba(0, 146, 140, 0) 72%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero-left {
@@ -307,13 +323,14 @@ h1 {
   font-size: clamp(1.9rem, 4.2vw, 3.1rem);
   line-height: 1.08;
   letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .hero-lead {
   max-width: 54ch;
   color: var(--text-soft);
-  line-height: 1.6;
-  font-size: 1.03rem;
+  line-height: 1.65;
+  font-size: 1.12rem;
 }
 
 .hero-cta-row {
@@ -400,7 +417,7 @@ a.hero-main-cta:active {
 .hero-right {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 560px;
   justify-self: end;
 }
 
@@ -710,6 +727,8 @@ a.hero-main-cta:active {
 
 .services-head h2 {
   margin-top: 12px;
+  max-width: 24ch;
+  margin-inline: auto;
 }
 
 .services-head p:last-child {
@@ -1036,7 +1055,7 @@ a.hero-main-cta:active {
 
 .problem-section h2 {
   margin-top: 20px;
-  max-width: 18ch;
+  max-width: 23ch;
   margin-inline: auto;
   font-weight: var(--font-weight-bold);
 }
@@ -1202,10 +1221,13 @@ a.hero-main-cta:active {
 }
 
 .risk-slider-head h2 {
+  max-width: 24ch;
+  margin-inline: auto;
   color: #ffffff;
   font-size: clamp(1.9rem, 4.3vw, 3.1rem);
   line-height: 1.08;
   letter-spacing: -0.025em;
+  text-wrap: balance;
 }
 
 .risk-slider-head p {
@@ -1666,6 +1688,7 @@ a.hero-main-cta:active {
   }
 
   .risk-slider-head h2 {
+    max-width: 100%;
     font-size: clamp(1.7rem, 8vw, 2.2rem);
   }
 
