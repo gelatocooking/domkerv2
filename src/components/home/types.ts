@@ -25,3 +25,4 @@ export type RiskCard = {
   effect: string;
 };
 
+

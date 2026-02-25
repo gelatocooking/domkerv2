@@ -12,6 +12,7 @@ import { RiskSliderSection } from "@/components/home/RiskSliderSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { ServicesShortcutSection } from "@/components/home/ServicesShortcutSection";
 import { SiteHeader } from "@/components/home/SiteHeader";
+import { ProcessRoadmap } from "@/components/sections/ProcessRoadmap";
 
 export default function Home() {
   return (
@@ -27,8 +28,9 @@ export default function Home() {
         <ProblemSection problemCards={problemCards} />
         <ServicesSection servicesCatalog={servicesCatalog} />
         <RiskSliderSection riskCards={riskCards} />
+        <ProcessRoadmap />
+
       </main>
     </div>
   );
 }
-

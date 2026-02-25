@@ -7,7 +7,7 @@
 
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
+  --button-secondary-border: #eef3ef;
 
   display: flex;
   min-height: 100vh;
@@ -104,7 +104,8 @@ a.secondary {
 
   a.secondary:hover {
     background: var(--button-secondary-hover);
-    border-color: transparent;
+    border-color: var(--button-secondary-border);
+    box-shadow: 0 8px 20px -20px rgba(16, 43, 29, 0.4);
   }
 }
 
