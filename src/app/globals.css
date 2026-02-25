@@ -254,39 +254,31 @@ a.header-cta:active {
 .home-shell {
   width: min(1320px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 56px 0 56px;
+  padding: 44px 0 56px;
 }
 
 .home-shell > section {
   padding-block: var(--section-space-desktop);
 }
 
+.home-shell > .hero-section {
+  padding-block: 20px 28px;
+}
+
 .hero-section {
   position: relative;
-  isolation: isolate;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 34px;
   align-items: center;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  top: -180px;
-  right: -160px;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 146, 140, 0.14) 0%, rgba(0, 146, 140, 0) 72%);
-  z-index: -1;
-  pointer-events: none;
+  padding-block: 4px 0;
 }
 
 .hero-left {
+  position: relative;
   display: grid;
   gap: 18px;
+  overflow: visible;
 }
 
 .hero-label {
@@ -410,13 +402,13 @@ a.hero-main-cta:active {
 .hero-right {
   position: relative;
   width: 100%;
-  max-width: 560px;
+  max-width: 460px;
   justify-self: end;
 }
 
 .hero-photo {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1.1 / 1;
   min-height: 0;
   border-radius: 12px;
   border: 1px solid #d8e6dc;
@@ -586,7 +578,7 @@ a.hero-main-cta:active {
   padding-top: 0;
   padding-bottom: 0;
   border-top: 1px solid #dde8e0;
-  padding-block: var(--space-3);
+  padding-block: 6px;
 }
 
 .services-shortcut-grid {
@@ -1385,7 +1377,7 @@ a.hero-main-cta:active {
   }
 
   .services-shortcut {
-    padding-block: var(--space-2);
+    padding-block: 6px;
   }
 
   .header-shell {
@@ -1670,7 +1662,7 @@ a.hero-main-cta:active {
   }
 
   .services-shortcut {
-    padding-block: 12px;
+    padding-block: 4px;
   }
 
   .header-shell {
@@ -1966,7 +1958,7 @@ a.hero-main-cta:active {
   }
 
   .services-shortcut {
-    padding-block: var(--space-1);
+    padding-block: 4px;
   }
 
   .header-shell {
