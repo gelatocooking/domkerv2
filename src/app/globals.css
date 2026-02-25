@@ -3,8 +3,8 @@
   --bg-surface: #ffffff;
   --text-main: #112218;
   --text-soft: #4d6456;
-  --accent: #00928C;
-  --accent-strong: #00A29B;
+  --accent: #00928c;
+  --accent-strong: #00a29b;
   --border: #d8e6db;
   --shadow: rgba(18, 33, 24, 0.1);
   --font-family-base: var(--font-geist-sans), "Segoe UI", system-ui, sans-serif;
@@ -102,7 +102,10 @@ a {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px -10px rgba(10, 25, 18, 0.28);
-  transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
   cursor: pointer;
 }
 
@@ -221,8 +224,8 @@ a.header-cta {
   min-height: 48px;
   padding: 0 24px;
   border-radius: 8px;
-  border: 1px solid #00928C;
-  background-color: #00928C;
+  border: 1px solid #00928c;
+  background-color: #00928c;
   color: #ffffff;
   font-size: 0.96rem;
   font-weight: 700;
@@ -231,13 +234,13 @@ a.header-cta {
 a.header-cta:link,
 a.header-cta:visited {
   color: #ffffff;
-  background-color: #00928C;
-  border-color: #00928C;
+  background-color: #00928c;
+  border-color: #00928c;
 }
 
 a.header-cta:hover {
-  background-color: #00857F;
-  border-color: #00857F;
+  background-color: #00857f;
+  border-color: #00857f;
   color: #ffffff;
 }
 
@@ -262,7 +265,7 @@ a.header-cta:active {
 }
 
 .home-shell > .hero-section {
-  padding-block: 20px 28px;
+  padding-block: 34px 42px;
 }
 
 .hero-section {
@@ -350,34 +353,34 @@ a.btn.btn-primary:visited {
 }
 
 a.btn.btn-primary:hover {
-  background-color: #007E79;
-  border-color: #007E79;
+  background-color: #007e79;
+  border-color: #007e79;
   color: #ffffff;
 }
 
 a.btn.btn-primary:active {
-  background-color: #006F6B;
-  border-color: #006F6B;
+  background-color: #006f6b;
+  border-color: #006f6b;
   color: #ffffff;
 }
 
 a.hero-main-cta,
 a.hero-main-cta:link,
 a.hero-main-cta:visited {
-  background: #00928C !important;
+  background: #00928c !important;
   border-color: var(--accent) !important;
   color: #ffffff !important;
 }
 
 a.hero-main-cta:hover {
-  background: #00706B !important;
-  border-color: #00706B !important;
+  background: #00706b !important;
+  border-color: #00706b !important;
   color: #ffffff !important;
 }
 
 a.hero-main-cta:active {
-  background: #005E5A !important;
-  border-color: #005E5A !important;
+  background: #005e5a !important;
+  border-color: #005e5a !important;
   color: #ffffff !important;
 }
 
@@ -447,17 +450,28 @@ a.hero-main-cta:active {
   padding: 10px 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  background: linear-gradient(145deg, rgba(7, 21, 14, 0.66), rgba(11, 31, 20, 0.48));
+  background: linear-gradient(
+    145deg,
+    rgba(7, 21, 14, 0.66),
+    rgba(11, 31, 20, 0.48)
+  );
   color: #eff7f2;
   backdrop-filter: blur(6px);
   overflow: hidden;
-  transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
 }
 
 .photo-point-card:hover {
   transform: scale(1.035);
   border-color: rgba(255, 255, 255, 0.34);
-  background: linear-gradient(145deg, rgba(9, 25, 16, 0.74), rgba(13, 36, 23, 0.56));
+  background: linear-gradient(
+    145deg,
+    rgba(9, 25, 16, 0.74),
+    rgba(13, 36, 23, 0.56)
+  );
 }
 
 .photo-point-card p {
@@ -473,7 +487,7 @@ a.hero-main-cta:active {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  background: #00928C;
+  background: #00928c;
   color: #ffffff;
 }
 
@@ -577,7 +591,6 @@ a.hero-main-cta:active {
   margin-top: 0;
   padding-top: 0;
   padding-bottom: 0;
-  border-top: 1px solid #dde8e0;
   padding-block: 6px;
 }
 
@@ -632,7 +645,7 @@ a.hero-main-cta:active {
   border-radius: 999px;
   border: 1px solid #dbe7dc;
   background: #f4faf5;
-  color: #007E79;
+  color: #007e79;
   font-size: var(--type-small);
   font-weight: 600;
   letter-spacing: 0.07em;
@@ -675,7 +688,7 @@ a.hero-main-cta:active {
 .services-shortcut-card a {
   margin-top: auto;
   width: fit-content;
-  color: #00928C;
+  color: #00928c;
   font-size: 0.86rem;
   font-weight: 600;
   border-bottom: 1px solid rgba(0, 146, 140, 0.28);
@@ -752,7 +765,10 @@ a.hero-main-cta:active {
   align-items: start;
   text-align: left;
   cursor: pointer;
-  transition: background 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease;
 }
 
 .service-switch-item:hover {
@@ -778,7 +794,7 @@ a.hero-main-cta:active {
 }
 
 .service-switch-item.is-active .service-switch-icon {
-  color: #00857F;
+  color: #00857f;
 }
 
 .service-switch-icon svg {
@@ -818,7 +834,7 @@ a.hero-main-cta:active {
   padding: 0 7px;
   border-radius: 999px;
   background: #e8f5ed;
-  color: #00928C;
+  color: #00928c;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -852,7 +868,11 @@ a.hero-main-cta:active {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(246, 247, 247, 0.78) 0%, rgba(246, 247, 247, 0.86) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(246, 247, 247, 0.78) 0%,
+    rgba(246, 247, 247, 0.86) 100%
+  );
 }
 
 .service-detail-card > * {
@@ -892,7 +912,7 @@ a.hero-main-cta:active {
   border-radius: 999px;
   border: 1px solid #dbe6dd;
   background: #ffffff;
-  color: #0B5F5C;
+  color: #0b5f5c;
   font-size: var(--type-small);
   font-weight: 600;
   display: inline-flex;
@@ -907,7 +927,7 @@ a.hero-main-cta:active {
 
 .service-mini-links a {
   font-size: 0.86rem;
-  color: #007E79;
+  color: #007e79;
   border-bottom: 1px solid rgba(0, 146, 140, 0.25);
 }
 
@@ -927,14 +947,14 @@ a.hero-main-cta:active {
 }
 
 .service-detail-actions a.btn.btn-primary:hover {
-  background-color: #007E79 !important;
-  border-color: #007E79 !important;
+  background-color: #007e79 !important;
+  border-color: #007e79 !important;
   color: #ffffff !important;
 }
 
 .service-detail-actions a.btn.btn-primary:active {
-  background-color: #006F6B !important;
-  border-color: #006F6B !important;
+  background-color: #006f6b !important;
+  border-color: #006f6b !important;
   color: #ffffff !important;
 }
 
@@ -982,8 +1002,16 @@ a.hero-main-cta:active {
   padding: 0;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(240, 246, 243, 0.54) 100%),
-    linear-gradient(180deg, rgba(0, 146, 140, 0.08) 0%, rgba(0, 146, 140, 0.03) 100%);
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.62) 0%,
+      rgba(240, 246, 243, 0.54) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 146, 140, 0.08) 0%,
+      rgba(0, 146, 140, 0.03) 100%
+    );
   backdrop-filter: blur(10px) saturate(112%);
   -webkit-backdrop-filter: blur(10px) saturate(112%);
   box-shadow:
@@ -1005,7 +1033,11 @@ a.hero-main-cta:active {
   border-radius: 50%;
   top: -240px;
   left: -120px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0) 72%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(255, 255, 255, 0) 72%
+  );
 }
 
 .problem-section::after {
@@ -1014,7 +1046,11 @@ a.hero-main-cta:active {
   border-radius: 50%;
   right: -180px;
   bottom: -280px;
-  background: radial-gradient(circle, rgba(0, 146, 140, 0.14) 0%, rgba(0, 146, 140, 0) 74%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 146, 140, 0.14) 0%,
+    rgba(0, 146, 140, 0) 74%
+  );
 }
 
 .problem-head {
@@ -1104,7 +1140,7 @@ a.hero-main-cta:active {
 }
 
 .tone-1 .problem-pill {
-  color: #00928C;
+  color: #00928c;
 }
 
 .tone-2 .problem-pill {
@@ -1248,7 +1284,10 @@ a.hero-main-cta:active {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.18s ease;
 }
 
 .risk-nav-btn svg {
@@ -1337,7 +1376,7 @@ a.hero-main-cta:active {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: #00928C;
+  background: #00928c;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -1368,7 +1407,6 @@ a.hero-main-cta:active {
   .hero-section {
     gap: 24px;
   }
-
 }
 
 @media (max-width: 1040px) {
@@ -1653,7 +1691,6 @@ a.hero-main-cta:active {
     right: 10px;
     bottom: 176px;
   }
-
 }
 
 @media (max-width: 680px) {
