@@ -20,6 +20,21 @@
   --line-tight: 1.2;
   --line-base: 1.5;
   --line-relaxed: 1.65;
+  --type-h1: clamp(3rem, 4.8vw, 3.5rem);
+  --type-h2: clamp(2.25rem, 3.6vw, 2.5rem);
+  --type-h3: clamp(1.25rem, 2.2vw, 1.5rem);
+  --type-body: clamp(1rem, 1.15vw, 1.125rem);
+  --type-small: clamp(0.8125rem, 0.95vw, 0.875rem);
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --section-space-desktop: 96px;
+  --section-space-tablet: 80px;
+  --section-space-mobile: 64px;
+  --section-space-mobile-sm: 48px;
 }
 
 * {
@@ -270,6 +285,10 @@ a.header-cta:active {
   padding: 56px 0 56px;
 }
 
+.home-shell > section {
+  padding-block: var(--section-space-desktop);
+}
+
 .hero-section {
   position: relative;
   isolation: isolate;
@@ -313,16 +332,18 @@ a.header-cta:active {
 
 h1 {
   max-width: 16ch;
-  font-size: clamp(2.2rem, 5.1vw, 3.7rem);
-  line-height: 1.03;
+  font-size: var(--type-h1);
+  line-height: 1.06;
   letter-spacing: -0.03em;
+  font-weight: var(--font-weight-bold);
 }
 
 .problem-section h2,
 .services-head h2 {
-  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
-  line-height: 1.08;
+  font-size: var(--type-h2);
+  line-height: 1.12;
   letter-spacing: -0.025em;
+  font-weight: var(--font-weight-semibold);
   text-wrap: balance;
 }
 
@@ -330,7 +351,7 @@ h1 {
   max-width: 54ch;
   color: var(--text-soft);
   line-height: 1.65;
-  font-size: 1.12rem;
+  font-size: var(--type-body);
 }
 
 .hero-cta-row {
@@ -585,9 +606,11 @@ a.hero-main-cta:active {
 }
 
 .services-shortcut {
-  margin-top: 44px;
-  padding-top: 30px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
   border-top: 1px solid #dde8e0;
+  padding-block: var(--space-3);
 }
 
 .services-shortcut-grid {
@@ -600,7 +623,7 @@ a.hero-main-cta:active {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-1);
   min-height: 210px;
   padding: 16px;
   border-radius: 0;
@@ -635,14 +658,14 @@ a.hero-main-cta:active {
 .services-shortcut-pill {
   display: inline-flex;
   width: fit-content;
-  min-height: 24px;
+  min-height: 22px;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 8px;
   border-radius: 999px;
   border: 1px solid #dbe7dc;
   background: #f4faf5;
   color: #007E79;
-  font-size: 0.72rem;
+  font-size: var(--type-small);
   font-weight: 600;
   letter-spacing: 0.07em;
 }
@@ -670,14 +693,14 @@ a.hero-main-cta:active {
 
 .services-shortcut-heading h3 {
   margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.32;
-  font-weight: 600;
+  font-size: clamp(1.06rem, 1.45vw, 1.24rem);
+  line-height: 1.28;
+  font-weight: var(--font-weight-semibold);
 }
 
 .services-shortcut-card p {
   color: #4d6558;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -691,10 +714,10 @@ a.hero-main-cta:active {
 }
 
 .services-section {
-  margin-top: 34px;
-  padding-top: 18px;
+  margin-top: 0;
+  padding-top: 0;
   display: grid;
-  gap: 24px;
+  gap: var(--space-3);
 }
 
 .services-head {
@@ -708,7 +731,7 @@ a.hero-main-cta:active {
   align-items: center;
   gap: 10px;
   color: #2f6246;
-  font-size: 0.78rem;
+  font-size: var(--type-small);
   letter-spacing: 0.1em;
   font-weight: 600;
   line-height: 1.2;
@@ -726,15 +749,15 @@ a.hero-main-cta:active {
 }
 
 .services-head h2 {
-  margin-top: 12px;
+  margin-top: var(--space-2);
   max-width: 24ch;
   margin-inline: auto;
 }
 
 .services-head p:last-child {
-  margin-top: 10px;
+  margin-top: var(--space-2);
   color: #4f6658;
-  font-size: 1rem;
+  font-size: var(--type-body);
   line-height: 1.55;
 }
 
@@ -802,7 +825,7 @@ a.hero-main-cta:active {
 }
 
 .service-switch-copy strong {
-  font-size: 0.93rem;
+  font-size: 1rem;
   line-height: 1.3;
   font-weight: 600;
   color: #1f3027;
@@ -814,7 +837,7 @@ a.hero-main-cta:active {
 
 .service-switch-copy small {
   color: #95a29a;
-  font-size: 0.74rem;
+  font-size: var(--type-small);
   line-height: 1.3;
   white-space: nowrap;
   overflow: hidden;
@@ -828,7 +851,7 @@ a.hero-main-cta:active {
   border-radius: 999px;
   background: #e8f5ed;
   color: #00928C;
-  font-size: 0.64rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   line-height: 1.1;
@@ -870,17 +893,18 @@ a.hero-main-cta:active {
 }
 
 .service-detail-card h3 {
-  font-size: 1.3rem;
-  line-height: 1.28;
+  font-size: var(--type-h3);
+  line-height: 1.24;
   letter-spacing: -0.01em;
+  font-weight: var(--font-weight-semibold);
 }
 
 .service-detail-card > p {
-  margin-top: 10px;
+  margin-top: 12px;
   max-width: 70ch;
   color: #485f52;
   line-height: 1.55;
-  font-size: 0.98rem;
+  font-size: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -888,20 +912,20 @@ a.hero-main-cta:active {
 }
 
 .service-proof-chips {
-  margin-top: 14px;
+  margin-top: var(--space-2);
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .service-proof-chips span {
-  min-height: 24px;
-  padding: 0 10px;
+  min-height: 22px;
+  padding: 0 8px;
   border-radius: 999px;
   border: 1px solid #dbe6dd;
   background: #ffffff;
   color: #0B5F5C;
-  font-size: 0.78rem;
+  font-size: var(--type-small);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -920,7 +944,7 @@ a.hero-main-cta:active {
 }
 
 .service-detail-actions {
-  margin-top: 14px;
+  margin-top: var(--space-2);
   display: grid;
   gap: 8px;
   justify-items: start;
@@ -947,7 +971,7 @@ a.hero-main-cta:active {
 }
 
 .service-audience {
-  margin-top: 10px;
+  margin-top: 12px;
   display: grid;
   gap: 6px;
 }
@@ -983,11 +1007,11 @@ a.hero-main-cta:active {
 .problem-section {
   position: relative;
   isolation: isolate;
-  margin-top: 54px;
+  margin-top: 0;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  padding: 68px 0 34px;
+  padding: 0;
   overflow: hidden;
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.62) 0%, rgba(240, 246, 243, 0.54) 100%),
@@ -1036,7 +1060,7 @@ a.hero-main-cta:active {
   align-items: center;
   gap: 10px;
   color: #254534;
-  font-size: 0.83rem;
+  font-size: var(--type-small);
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -1054,23 +1078,23 @@ a.hero-main-cta:active {
 }
 
 .problem-section h2 {
-  margin-top: 20px;
+  margin-top: var(--space-3);
   max-width: 23ch;
   margin-inline: auto;
   font-weight: var(--font-weight-bold);
 }
 
 .problem-sublead {
-  margin-top: 18px;
+  margin-top: var(--space-3);
   margin-inline: auto;
   max-width: 62ch;
   color: #4a6355;
-  font-size: 1.06rem;
+  font-size: var(--type-body);
   line-height: var(--line-relaxed);
 }
 
 .problem-grid {
-  margin-top: 42px;
+  margin-top: var(--space-4);
   width: min(1320px, calc(100% - 48px));
   margin-left: auto;
   margin-right: auto;
@@ -1095,7 +1119,7 @@ a.hero-main-cta:active {
   min-height: 0;
   padding: 0;
   border-radius: 0;
-  font-size: 0.88rem;
+  font-size: var(--type-small);
   font-weight: 600;
   letter-spacing: 0.07em;
   line-height: 1.2;
@@ -1136,15 +1160,15 @@ a.hero-main-cta:active {
 }
 
 .problem-card h3 {
-  margin-top: 18px;
-  font-size: 1.15rem;
-  line-height: 1.28;
+  margin-top: var(--space-2);
+  font-size: var(--type-h3);
+  line-height: 1.24;
   letter-spacing: -0.01em;
-  font-weight: 700;
+  font-weight: var(--font-weight-semibold);
 }
 
 .problem-card p {
-  margin-top: 14px;
+  margin-top: 12px;
   color: #4d6457;
   font-size: 1rem;
   line-height: 1.52;
@@ -1156,11 +1180,11 @@ a.hero-main-cta:active {
 
 .risk-slider-section {
   position: relative;
-  margin-top: 58px;
+  margin-top: 0;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  padding: 96px 0;
+  padding: 0;
   background: linear-gradient(180deg, #0b0f0e 0%, #0f1412 100%);
   overflow: hidden;
 }
@@ -1188,14 +1212,14 @@ a.hero-main-cta:active {
   width: min(1320px, calc(100% - 48px));
   margin: 0 auto;
   display: grid;
-  gap: 28px;
+  gap: var(--space-4);
 }
 
 .risk-slider-head {
   display: grid;
   justify-items: center;
   text-align: center;
-  gap: 14px;
+  gap: var(--space-2);
 }
 
 .risk-slider-kicker {
@@ -1203,7 +1227,7 @@ a.hero-main-cta:active {
   align-items: center;
   gap: 10px;
   color: #f2f8f5;
-  font-size: 0.78rem;
+  font-size: var(--type-small);
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1.2;
@@ -1224,16 +1248,17 @@ a.hero-main-cta:active {
   max-width: 24ch;
   margin-inline: auto;
   color: #ffffff;
-  font-size: clamp(1.9rem, 4.3vw, 3.1rem);
-  line-height: 1.08;
+  font-size: var(--type-h2);
+  line-height: 1.12;
   letter-spacing: -0.025em;
+  font-weight: var(--font-weight-semibold);
   text-wrap: balance;
 }
 
 .risk-slider-head p {
   max-width: 72ch;
   color: #b8c7bf;
-  font-size: 1.02rem;
+  font-size: var(--type-body);
   line-height: 1.65;
 }
 
@@ -1265,7 +1290,7 @@ a.hero-main-cta:active {
 }
 
 .risk-slider-track {
-  --risk-gap: 18px;
+  --risk-gap: var(--space-2);
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: calc((100% - (2 * var(--risk-gap))) / 3);
@@ -1282,13 +1307,13 @@ a.hero-main-cta:active {
 .risk-card {
   scroll-snap-align: start;
   min-height: 100%;
-  padding: 30px;
+  padding: var(--space-4);
   border-radius: 24px;
   background: #ffffff;
   box-shadow: 0 18px 36px -26px rgba(6, 16, 11, 0.75);
   display: grid;
   align-content: start;
-  gap: 16px;
+  gap: var(--space-2);
 }
 
 .risk-card-pill {
@@ -1306,31 +1331,32 @@ a.hero-main-cta:active {
 }
 
 .risk-card h3 {
-  font-size: clamp(1.24rem, 2.2vw, 1.55rem);
-  line-height: 1.26;
+  font-size: var(--type-h3);
+  line-height: 1.24;
   letter-spacing: -0.015em;
+  font-weight: var(--font-weight-semibold);
 }
 
 .risk-card > p {
   color: #576b60;
   line-height: 1.58;
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 
 .risk-card-effect {
-  margin-top: auto;
+  margin-top: 22px;
   min-height: 66px;
   border-radius: 14px;
   padding: 12px 14px;
   background: #e8fff3;
-  color: #1f5d3d;
+  color: #0b5f5c;
   display: grid;
   grid-template-columns: 22px 1fr;
   gap: 10px;
   align-items: start;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   line-height: 1.45;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .risk-effect-icon {
@@ -1367,6 +1393,14 @@ a.hero-main-cta:active {
 }
 
 @media (max-width: 1040px) {
+  .home-shell > section {
+    padding-block: var(--section-space-tablet);
+  }
+
+  .services-shortcut {
+    padding-block: var(--space-2);
+  }
+
   .header-shell {
     width: min(100%, calc(100% - 28px));
     min-height: 72px;
@@ -1457,8 +1491,8 @@ a.hero-main-cta:active {
   }
 
   .risk-slider-section {
-    margin-top: 44px;
-    padding: 76px 0;
+    margin-top: 0;
+    padding: 0;
   }
 
   .risk-slider-shell {
@@ -1577,8 +1611,8 @@ a.hero-main-cta:active {
   }
 
   .problem-section {
-    margin-top: 38px;
-    padding: 46px 0 20px;
+    margin-top: 0;
+    padding: 0;
   }
 
   .problem-head,
@@ -1644,6 +1678,14 @@ a.hero-main-cta:active {
 }
 
 @media (max-width: 680px) {
+  .home-shell > section {
+    padding-block: var(--section-space-mobile);
+  }
+
+  .services-shortcut {
+    padding-block: 12px;
+  }
+
   .header-shell {
     width: min(100%, calc(100% - 20px));
     min-height: 66px;
@@ -1672,8 +1714,8 @@ a.hero-main-cta:active {
   }
 
   .risk-slider-section {
-    margin-top: 40px;
-    padding: 62px 0;
+    margin-top: 0;
+    padding: 0;
   }
 
   .risk-slider-shell {
@@ -1887,8 +1929,8 @@ a.hero-main-cta:active {
     font-size: 0.72rem;
   }
   .problem-section {
-    margin-top: 36px;
-    padding: 34px 0 16px;
+    margin-top: 0;
+    padding: 0;
   }
 
   .problem-head,
@@ -1932,6 +1974,14 @@ a.hero-main-cta:active {
 }
 
 @media (max-width: 540px) {
+  .home-shell > section {
+    padding-block: var(--section-space-mobile-sm);
+  }
+
+  .services-shortcut {
+    padding-block: var(--space-1);
+  }
+
   .header-shell {
     min-height: 62px;
   }
@@ -1952,7 +2002,7 @@ a.hero-main-cta:active {
   }
 
   .risk-slider-section {
-    padding: 54px 0;
+    padding: 0;
   }
 
   .risk-slider-kicker {
@@ -2044,7 +2094,7 @@ a.hero-main-cta:active {
   }
 
   .problem-section {
-    padding-top: 22px;
+    padding-top: 0;
   }
 
   .problem-eyebrow {
