@@ -9,6 +9,7 @@ import {
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProblemSection } from "@/components/home/ProblemSection";
 import { RiskSliderSection } from "@/components/home/RiskSliderSection";
+import { ContactSection } from "@/components/home/ContactSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { ServicesShortcutSection } from "@/components/home/ServicesShortcutSection";
 import { SiteHeader } from "@/components/home/SiteHeader";
@@ -29,7 +30,7 @@ export default function Home() {
         <ServicesSection servicesCatalog={servicesCatalog} />
         <RiskSliderSection riskCards={riskCards} />
         <ProcessRoadmap />
-
+        <ContactSection />
       </main>
     </div>
   );
