@@ -71,10 +71,12 @@
   line-height: 1.12;
 }
 
-.services-head h2.section-title-24 {
+.services-head h2#speed-heading,
+.services-head h2#limits-heading {
   font-size: 24px;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  font-weight: var(--font-weight-semibold);
 }
 
 .services-head p:last-child {
@@ -320,6 +322,61 @@
 .business-detail-card {
   display: grid;
   gap: var(--space-2);
+}
+
+.business-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.business-pillar-card {
+  min-height: 176px;
+  padding: 24px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  background: #ffffff;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  box-shadow: 0 12px 22px -26px rgba(18, 34, 24, 0.34);
+}
+
+.business-pillar-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #eafaf2 0%, #def4eb 100%);
+  color: #007e79;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(0, 146, 140, 0.12);
+}
+
+.business-pillar-icon svg {
+  width: 36px;
+  height: 36px;
+  stroke-width: 1.9;
+}
+
+.business-pillar-card h3 {
+  font-size: clamp(1.18rem, 1.7vw, 1.32rem);
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+}
+
+.business-pillar-card p {
+  color: #4f6658;
+  font-size: 1rem;
+  line-height: 1.56;
+}
+
+.business-pillars-actions {
+  margin-top: var(--space-2);
+  display: grid;
+  gap: 8px;
+  justify-items: center;
 }
 
 .business-bullets {
@@ -586,6 +643,14 @@
   .business-scenario-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .business-pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-pillar-card:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 1040px) {
@@ -626,6 +691,25 @@
     grid-template-columns: 1fr;
   }
 
+  .business-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .business-pillar-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .business-pillar-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .business-pillar-card:last-child {
+    grid-column: auto;
+  }
+
   .business-shortcut-clean .services-shortcut-card::after {
     display: block;
     top: auto;
@@ -656,7 +740,8 @@
     font-size: clamp(1.7rem, 8vw, 2.2rem);
   }
 
-  .services-head h2.section-title-24 {
+  .services-head h2#speed-heading,
+  .services-head h2#limits-heading {
     font-size: 24px;
     line-height: 1.2;
   }

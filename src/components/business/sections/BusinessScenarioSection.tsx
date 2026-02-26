@@ -13,7 +13,7 @@ export function BusinessScenarioSection({ cards }: Props) {
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="scenario-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
         <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>WYBIERZ SCENARIUSZ</p>
-        <h2 id="scenario-heading" className={base.title}>Dopasuj sciezke do typu realizacji</h2>
+        <h2 id="scenario-heading" className={base.title}>Dopasuj ścieżkę do typu realizacji</h2>
       </div>
 
       <div className={styles["business-scenario-grid"]}>

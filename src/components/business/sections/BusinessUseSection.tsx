@@ -11,8 +11,8 @@ export function BusinessUseSection({ cards }: Props) {
   return (
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="use-page-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>JAK UZYC TEJ STRONY</p>
-        <h2 id="use-page-heading" className={base.title}>Wybierz scenariusz i przejdz do wlasciwej sciezki</h2>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>JAK UŻYĆ TEJ STRONY</p>
+        <h2 id="use-page-heading" className={base.title}>Wybierz scenariusz i przejdź do właściwej ścieżki</h2>
         <p className={base.lead}>To strona-hub. Tu ustawiasz kierunek i przechodzisz do konkretnej podstrony.</p>
       </div>
 

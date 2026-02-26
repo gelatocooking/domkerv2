@@ -10,8 +10,8 @@ export function BusinessLimitsSection({ bullets }: Props) {
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="limits-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
         <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>MINIMUM LOGISTYCZNE</p>
-        <h2 id="limits-heading" className={`${base.title} ${styles["section-title-24"]}`}>
-          Mowimy wprost, zeby nie tracic Twojego czasu
+        <h2 id="limits-heading" className={base.title}>
+          Mówimy wprost, żeby nie tracić Twojego czasu
         </h2>
       </div>
 

@@ -9,7 +9,7 @@ export function BusinessFormalSection({ cards }: Props) {
   return (
     <section className={styles["problem-section"]} aria-labelledby="formal-heading">
       <div className={styles["problem-head"]}>
-        <p className={styles["problem-eyebrow"]}>FORMALNOSCI I ODPOWIEDZIALNOSC</p>
+        <p className={styles["problem-eyebrow"]}>FORMALNOŚCI I ODPOWIEDZIALNOŚĆ</p>
         <h2 id="formal-heading">To zapewniamy i dokumentujemy po naszej stronie</h2>
       </div>
       <div className={styles["problem-grid"]}>

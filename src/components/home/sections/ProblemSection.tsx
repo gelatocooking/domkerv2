@@ -6,14 +6,14 @@ export function ProblemSection({ problemCards }: { problemCards: ProblemCard[] }
     <section className={styles["problem-section"]} aria-labelledby="problem-heading">
       <div className={styles["problem-head"]}>
         <p className={styles["problem-eyebrow"]}>CZY TO BRZMI ZNAJOMO?</p>
-        <h2 id="problem-heading">Rozwiazujemy problemy, z ktorymi mierzy sie Twoja firma</h2>
+        <h2 id="problem-heading">Rozwiązujemy problemy, z którymi mierzy się Twoja firma</h2>
         <p className={styles["problem-sublead"]}>
-          Widzielismy to setki razy - od codziennych frustracji po bariery, ktore hamuja tempo i
-          przewidywalnosc realizacji.
+          Widzieliśmy to setki razy - od codziennych frustracji po bariery, które hamują tempo i
+          przewidywalność realizacji.
         </p>
       </div>
 
-      <div className={styles["problem-grid"]} aria-label="Najczestsze ryzyka">
+      <div className={styles["problem-grid"]} aria-label="Najczęstsze ryzyka">
         {problemCards.map((card, index) => (
           <article
             key={card.pill}

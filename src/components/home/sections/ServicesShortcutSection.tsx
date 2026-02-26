@@ -10,7 +10,7 @@ type Props = {
 
 export function ServicesShortcutSection({ servicesCatalog, serviceShortcutPills }: Props) {
   return (
-    <section id="co-robimy" className={styles["services-shortcut"]} aria-label="Skrot uslug">
+    <section id="co-robimy" className={styles["services-shortcut"]} aria-label="Skrót usług">
       <div className={styles["services-shortcut-grid"]}>
         {servicesCatalog.map((service) => (
           <article className={styles["services-shortcut-card"]} key={service.id}>

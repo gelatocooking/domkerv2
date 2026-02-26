@@ -1,11 +1,15 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./ContactSection.module.css";
 
-const timeWindowOptions = ["Dzis", "Jutro", "W tym tygodniu"];
+const timeWindowOptions = ["Dziś", "Jutro", "W tym tygodniu"];
 
-export function ContactSection() {
+type Props = {
+  sectionId?: string;
+};
+
+export function ContactSection({ sectionId }: Props) {
   const [timeWindow, setTimeWindow] = useState<string>(timeWindowOptions[0]);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -29,6 +33,7 @@ export function ContactSection() {
 
   return (
     <section
+      id={sectionId}
       ref={sectionRef}
       className={`${styles["contact-section"]} ${isVisible ? styles["is-visible"] : ""}`}
       aria-labelledby="contact-heading"
@@ -36,18 +41,18 @@ export function ContactSection() {
     >
       <div className={styles["contact-head"]}>
         <p className={styles["contact-eyebrow"]}>KONTAKT</p>
-        <h2 id="contact-heading">Pilny termin? Zostaw szybkie zgloszenie</h2>
-        <p>Zbieramy minimum danych i wracamy tego samego dnia z konkretna propozycja.</p>
+        <h2 id="contact-heading">Pilny termin? Zostaw szybkie zgłoszenie</h2>
+        <p>Zbieramy minimum danych i wracamy tego samego dnia z konkretną propozycją.</p>
       </div>
 
       <div className={styles["contact-layout"]}>
         <aside className={styles["contact-hero-card"]} aria-label="Szybkie podsumowanie procesu">
           <p className={styles["contact-hero-kicker"]}>MINIMUM DANYCH</p>
-          <h3>Krotki formularz. Konkret tego samego dnia.</h3>
-          <p>Podajesz 3-4 informacje. Wracamy z widelkami, terminem i oferta gotowa do zatwierdzenia.</p>
+          <h3>Krótki formularz. Konkret tego samego dnia.</h3>
+          <p>Podajesz 3-4 informacje. Wracamy z widełkami, terminem i ofertą gotową do zatwierdzenia.</p>
           <ul className={styles["contact-hero-points"]}>
-            <li>Widelki + termin po briefie</li>
-            <li>Oferta PDF/HTML do wyslania dalej</li>
+            <li>Widełki + termin po briefie</li>
+            <li>Oferta PDF/HTML do wysłania dalej</li>
             <li>Minimum danych. Jasny kolejny krok.</li>
           </ul>
         </aside>
@@ -65,7 +70,7 @@ export function ContactSection() {
             </label>
 
             <fieldset className={styles["contact-fieldset"]}>
-              <legend>Okno wejscia</legend>
+              <legend>Okno wejścia</legend>
               <div className={styles["contact-window-options"]}>
                 {timeWindowOptions.map((option) => (
                   <label key={option} className={styles["contact-window-option"]}>
@@ -84,30 +89,30 @@ export function ContactSection() {
             </fieldset>
 
             <fieldset className={styles["contact-consents"]}>
-              <legend>Zgody i prywatnosc</legend>
+              <legend>Zgody i prywatność</legend>
               <label className={styles["consent-item"]}>
                 <input type="checkbox" name="privacy_ack" required />
                 <span>
-                  Potwierdzam zapoznanie z <a href="/polityka-prywatnosci">Polityka prywatnosci</a>{" "}
-                  i informacja o przetwarzaniu danych (RODO). *
+                  Potwierdzam zapoznanie z <a href="/polityka-prywatnosci">Polityką prywatności</a>{" "}
+                  i informacją o przetwarzaniu danych (RODO). *
                 </span>
               </label>
 
               <label className={styles["consent-item"]}>
                 <input type="checkbox" name="marketing_email" />
-                <span>Wyrazam zgode na kontakt marketingowy e-mail (opcjonalnie).</span>
+                <span>Wyrażam zgodę na kontakt marketingowy e-mail (opcjonalnie).</span>
               </label>
 
               <label className={styles["consent-item"]}>
                 <input type="checkbox" name="marketing_phone_sms" />
-                <span>Wyrazam zgode na kontakt marketingowy telefoniczny/SMS (opcjonalnie).</span>
+                <span>Wyrażam zgodę na kontakt marketingowy telefoniczny/SMS (opcjonalnie).</span>
               </label>
             </fieldset>
 
             <button type="submit" className={styles["contact-cta"]}>
-              <span>Wyslij zgloszenie</span>
+              <span>Wyślij zgłoszenie</span>
               <span className={styles["contact-cta-icon"]} aria-hidden="true">
-                →
+                ›
               </span>
             </button>
             <p className={styles["contact-meta"]}>W godzinach biura zwykle odpisujemy do 15 minut.</p>
@@ -117,3 +122,4 @@ export function ContactSection() {
     </section>
   );
 }
+

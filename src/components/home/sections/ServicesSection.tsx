@@ -16,13 +16,13 @@ export function ServicesSection({ servicesCatalog }: { servicesCatalog: ServiceE
   return (
     <section className={`${base.section} ${styles["services-section"]}`} aria-labelledby="services-detailed-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>NASZE USLUGI</p>
-        <h2 id="services-detailed-heading" className={base.title}>Wybierz usluge i przejdz od problemu do decyzji</h2>
-        <p className={base.lead}>4 sciezki - kazda z jasnym zakresem, logistyka i standardem odbioru.</p>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>NASZE USŁUGI</p>
+        <h2 id="services-detailed-heading" className={base.title}>Wybierz usługę i przejdź od problemu do decyzji</h2>
+        <p className={base.lead}>4 ścieżki - każda z jasnym zakresem, logistyką i standardem odbioru.</p>
       </div>
 
       <div className={styles["services-layout"]}>
-        <div className={styles["services-switcher"]} role="tablist" aria-label="Wybierz usluge">
+        <div className={styles["services-switcher"]} role="tablist" aria-label="Wybierz usługę">
           {servicesCatalog.map((service) => (
             <button
               key={service.id}
@@ -41,7 +41,7 @@ export function ServicesSection({ servicesCatalog }: { servicesCatalog: ServiceE
                 <strong>
                   {service.navTitle}
                   {service.id === "post-build" && (
-                    <span className={styles["service-switch-badge"]}>Najczesciej wybierane</span>
+                    <span className={styles["service-switch-badge"]}>Najczęściej wybierane</span>
                   )}
                 </strong>
                 <small>{service.navMeta}</small>

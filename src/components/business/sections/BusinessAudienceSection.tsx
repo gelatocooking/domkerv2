@@ -10,10 +10,10 @@ export function BusinessAudienceSection({ cards }: Props) {
     <section className={styles["problem-section"]} aria-labelledby="audience-heading">
       <div className={styles["problem-head"]}>
         <p className={styles["problem-eyebrow"]}>DLA KOGO TO JEST</p>
-        <h2 id="audience-heading">Dla firm, ktore chca zdjac z siebie koordynacje realizacji</h2>
+        <h2 id="audience-heading">Dla firm, które chcą zdjąć z siebie koordynację realizacji</h2>
         <p className={styles["problem-sublead"]}>
-          Jesli potrzebujesz wykonawcy, ktory bierze odpowiedzialnosc operacyjna po swojej stronie,
-          jestes w dobrym miejscu.
+          Jeśli potrzebujesz wykonawcy, który bierze odpowiedzialność operacyjną po swojej stronie,
+          jesteś w dobrym miejscu.
         </p>
       </div>
 

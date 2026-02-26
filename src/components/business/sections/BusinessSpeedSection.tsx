@@ -7,10 +7,10 @@ type Props = {
 
 export function BusinessSpeedSection({ chips }: Props) {
   return (
-    <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="speed-heading" id="minimum-danych">
+    <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="speed-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>TEMPO DZIALANIA</p>
-        <h2 id="speed-heading" className={`${base.title} ${styles["section-title-24"]}`}>Jak szybko dzialamy</h2>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>TEMPO DZIAŁANIA</p>
+        <h2 id="speed-heading" className={base.title}>Jak szybko działamy</h2>
       </div>
 
       <article className={styles["speed-card"]}>
@@ -26,7 +26,7 @@ export function BusinessSpeedSection({ chips }: Props) {
         </div>
         <p className={styles["business-footnote"]}>
           SLA do 24h dotyczy uruchomienia i koordynacji realizacji po potwierdzeniu zakresu,
-          warunkow wejscia i przyjeciu zlecenia.
+          warunków wejścia i przyjęciu zlecenia.
         </p>
       </article>
     </section>

@@ -72,7 +72,7 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
           className={styles["menu-toggle"]}
           aria-expanded={isMenuOpen}
           aria-controls="main-navigation"
-          aria-label={isMenuOpen ? "Zamknij menu" : "Otworz menu"}
+          aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
           <span className={styles["menu-toggle-icon"]} aria-hidden="true">
@@ -80,9 +80,9 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
           </span>
         </button>
 
-        <nav className={styles["main-nav"]} id="main-navigation" aria-label="Nawigacja glowna">
+        <nav className={styles["main-nav"]} id="main-navigation" aria-label="Nawigacja główna">
           <Link href="/" onClick={closeMenu}>
-            Strona glowna
+            Strona główna
           </Link>
 
           <div className={`${styles["nav-dropdown"]} ${isServicesOpen ? styles["is-open"] : ""}`}>
@@ -92,7 +92,7 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
               aria-expanded={isServicesOpen}
               onClick={() => setIsServicesOpen((prev) => !prev)}
             >
-              Uslugi dla firm
+              Usługi dla firm
               <ChevronDown className={styles["nav-dropdown-chevron"]} aria-hidden="true" />
             </button>
             <div className={styles["dropdown-menu"]}>
@@ -120,12 +120,12 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
             Kontakt
           </Link>
           <Link className={styles["main-nav-cta"]} href="/kontakt" onClick={closeMenu}>
-            Bezplatna konsultacja
+            Bezpłatna konsultacja
           </Link>
         </nav>
 
         <Link className={styles["header-cta"]} href="/kontakt" onClick={closeMenu}>
-          Bezplatna konsultacja
+          Bezpłatna konsultacja
         </Link>
       </div>
 

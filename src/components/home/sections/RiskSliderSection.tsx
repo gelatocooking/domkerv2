@@ -29,8 +29,8 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
           <p className={styles["risk-slider-kicker"]}>RYZYKA I JAK JE GASIMY</p>
           <h2 id="risk-slider-heading">Jak radzimy sobie z kluczowymi wyzwaniami?</h2>
           <p>
-            Pokazujemy najczestsze ryzyka na koncowce budowy i dokladnie jak je domykamy, zeby nie
-            trzeba bylo gasic pozarow po swojej stronie.
+            Pokazujemy najczęstsze ryzyka na końcówce budowy i dokładnie jak je domykamy, żeby nie
+            trzeba było gasić pożarów po swojej stronie.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
           <button
             type="button"
             className={styles["risk-nav-btn"]}
-            aria-label="Nastepne ryzyko"
+            aria-label="Następne ryzyko"
             onClick={() => scrollRisksByOne(1)}
           >
             <ChevronRight />

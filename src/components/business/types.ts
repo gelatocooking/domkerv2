@@ -46,3 +46,8 @@ export type BusinessScenarioCard = {
   checklist?: string[];
   effect?: string;
 };
+
+export type BusinessNeedPillar = {
+  title: string;
+  meta: string;
+};

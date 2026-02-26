@@ -11,7 +11,7 @@ export function BusinessReferencesSection({ cards }: Props) {
   return (
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="references-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>DALSZE MATERIALY</p>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>DALSZE MATERIAŁY</p>
         <h2 id="references-heading" className={base.title}>Zobacz realizacje i referencje</h2>
       </div>
       <div

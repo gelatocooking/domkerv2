@@ -10,13 +10,13 @@ export function BusinessOutroSection() {
         <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>NA KONIEC</p>
         <h2 id="end-heading" className={base.title}>Potrzebujesz oferty do zatwierdzenia (PDF/HTML)?</h2>
         <p className={base.lead}>
-          Napisz lub zadzwon. Wrocimy z widelkami i jasnym kolejnym krokiem, gotowym do przekazania
-          przelozonemu, zarzadowi lub dzialowi zakupow.
+          Napisz lub zadzwoń. Wrócimy z widełkami i jasnym kolejnym krokiem, gotowym do przekazania
+          przełożonemu, zarządowi lub działowi zakupów.
         </p>
       </div>
       <div className={`${styles["service-detail-actions"]} ${styles["business-outro-actions"]}`}>
         <Link className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`} href="/kontakt">
-          Przejdz do kontaktu
+          Przejdź do kontaktu
         </Link>
         <a className={`${buttonStyles.btn} ${buttonStyles.btnSecondary}`} href="tel:+48502992002">
           +48 502 992 002

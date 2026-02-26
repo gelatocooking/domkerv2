@@ -14,21 +14,21 @@ type Props = {
 };
 
 const defaultSteps: Step[] = [
-  { title: "Kontakt", text: "Wybierasz kanal. W godzinach biura odpowiadamy do 15 minut." },
-  { title: "Minimum danych", text: "Zbieramy tylko to, co potrzebne do widelki i nastepnego kroku." },
+  { title: "Kontakt", text: "Wybierasz kanał. W godzinach biura odpowiadamy do 15 minut." },
+  { title: "Minimum danych", text: "Zbieramy tylko to, co potrzebne do widełek i następnego kroku." },
   {
     title: "Rozpoznanie / wizja",
-    text: "Przy wiekszych zleceniach potwierdzamy technologie i czas na obiekcie.",
+    text: "Przy większych zleceniach potwierdzamy technologię i czas na obiekcie.",
   },
   {
     title: "Start i przygotowanie",
-    text: "Szkolenie, analiza ryzyk, kolejnosc prac i zabezpieczenia.",
+    text: "Szkolenie, analiza ryzyk, kolejność prac i zabezpieczenia.",
   },
   {
     title: "Realizacja + kontrola",
-    text: "Odbior wewnetrzny checklista zanim powiemy gotowe.",
+    text: "Odbiór wewnętrzny checklistą zanim powiemy gotowe.",
   },
-  { title: "Odbior i domkniecie", text: "Protokoly + zdjecia, rozliczenie i koniec tematu." },
+  { title: "Odbiór i domknięcie", text: "Protokoły + zdjęcia, rozliczenie i koniec tematu." },
 ];
 
 export function TimelineSection({ steps = defaultSteps }: Props) {
@@ -82,15 +82,15 @@ export function TimelineSection({ steps = defaultSteps }: Props) {
   return (
     <section className={`${base.section} ${styles["timeline-section"]}`} aria-labelledby="timeline-heading">
       <div className={`${base.head} ${styles["timeline-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["timeline-eyebrow"]}`}>JAK DZIALAMY</p>
-        <h2 id="timeline-heading" className={base.title}>Jak zamawiasz usluge i jak dowozimy efekt</h2>
+        <p className={`${base.eyebrow} ${styles["timeline-eyebrow"]}`}>JAK DZIAŁAMY</p>
+        <h2 id="timeline-heading" className={base.title}>Jak zamawiasz usługę i jak dowozimy efekt</h2>
         <p className={`${base.lead} ${styles["timeline-sub"]}`}>
-          Od pierwszego kontaktu do protokolu odbioru - przewidywalnie i bez chaosu.
+          Od pierwszego kontaktu do protokołu odbioru - przewidywalnie i bez chaosu.
         </p>
       </div>
 
       <div className={styles["timeline-trust"]}>
-        Odpowiedz do 15 min • Protokoly i zdjecia • Odbior checklista
+        Odpowiedź do 15 min • Protokoły i zdjęcia • Odbiór checklistą
       </div>
 
       <div className={styles["timeline-steps"]} role="list" aria-label="Kroki procesu">

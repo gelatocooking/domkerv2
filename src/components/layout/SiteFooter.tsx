@@ -1,5 +1,4 @@
-import Link from "next/link";
-import buttonStyles from "@/styles/Button.module.css";
+﻿import Link from "next/link";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter() {
@@ -7,37 +6,35 @@ export function SiteFooter() {
 
   return (
     <footer>
-        
-
       <section className={styles["site-footer"]}>
         <div className={`${styles["footer-wrap"]} ${styles.cols}`}>
           <div className={styles.col}>
             <h4>Domker</h4>
             <p>
-              Domker to poukladane procesy sprzatania — dzialamy na standardach kompetencji i
-              raportujemy postepy prac, zeby chronic interes klienta.
+              Domker to poukładane procesy sprzątania - działamy na standardach kompetencji i
+              raportujemy postępy prac, żeby chronić interes klienta.
             </p>
             <ul className={styles.links}>
               <li>
-                <Link href="/kontakt">Zapytaj o wycene</Link>
+                <Link href="/kontakt">Zapytaj o wycenę</Link>
               </li>
               <li>
                 <Link href="/realizacje">Zobacz realizacje</Link>
               </li>
               <li>
-                <Link href="/referencje">Opinie klientow</Link>
+                <Link href="/referencje">Opinie klientów</Link>
               </li>
             </ul>
           </div>
 
           <div className={styles.col}>
-            <h4>Uslugi dla firm</h4>
+            <h4>Usługi dla firm</h4>
             <ul className={styles.links}>
               <li>
-                <Link href="/uslugi-dla-firm">Uslugi dla firm</Link>
+                <Link href="/uslugi-dla-firm">Usługi dla firm</Link>
               </li>
               <li>
-                <Link href="/sprzatanie-po-budowie">Sprzatanie po budowie</Link>
+                <Link href="/sprzatanie-po-budowie">Sprzątanie po budowie</Link>
               </li>
               <li>
                 <Link href="/maszynowe-czyszczenie-posadzek">Maszynowe czyszczenie posadzek</Link>
@@ -49,10 +46,10 @@ export function SiteFooter() {
           </div>
 
           <div className={styles.col}>
-            <h4>Na skroty</h4>
+            <h4>Na skróty</h4>
             <ul className={styles.links}>
               <li>
-                <Link href="/">Strona glowna</Link>
+                <Link href="/">Strona główna</Link>
               </li>
               <li>
                 <Link href="/realizacje">Realizacje</Link>
@@ -61,7 +58,7 @@ export function SiteFooter() {
                 <Link href="/referencje">Referencje / opinie</Link>
               </li>
               <li>
-                <Link href="/cennik">Cennik / widelki</Link>
+                <Link href="/cennik">Cennik / widełki</Link>
               </li>
               <li>
                 <Link href="/kontakt">Kontakt</Link>
@@ -70,7 +67,7 @@ export function SiteFooter() {
           </div>
 
           <div className={styles.col}>
-            <h4>Bezposredni kontakt</h4>
+            <h4>Bezpośredni kontakt</h4>
             <p>
               <a className={styles["contact-link"]} href="tel:+48502992002">
                 +48 502 992 002
@@ -81,7 +78,7 @@ export function SiteFooter() {
               </a>
             </p>
             <p className={styles.company}>
-              <strong>Fryderyk Ossolinski „Domker”</strong>
+              <strong>Fryderyk Ossoliński „Domker”</strong>
               <br />
               Akacjowa 7/2, 59-100 Polkowice
               <br />
@@ -108,13 +105,13 @@ export function SiteFooter() {
         </div>
 
         <div className={`${styles["footer-wrap"]} ${styles.bottom}`}>
-          <p>© {year} Domker. Wszelkie prawa zastrzezone.</p>
+          <p>© {year} Domker. Wszelkie prawa zastrzeżone.</p>
           <ul className={styles.legal}>
             <li>
-              <Link href="/polityka-prywatnosci">Polityka prywatnosci</Link>
+              <Link href="/polityka-prywatnosci">Polityka prywatności</Link>
             </li>
             <li>
-              <Link href="/warunki-uzytkowania">Warunki uzytkowania</Link>
+              <Link href="/warunki-uzytkowania">Warunki użytkowania</Link>
             </li>
             <li>
               <Link href="/rodo">RODO</Link>

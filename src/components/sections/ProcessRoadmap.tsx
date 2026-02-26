@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo, useState } from "react";
 import type { KeyboardEvent } from "react";
@@ -46,7 +46,7 @@ const defaultSteps: ProcessRoadmapStep[] = [
     number: "01",
     mapLabel: "Kontakt",
     title: "Kontakt",
-    desc: "Wybierasz kanal. W godzinach pracy biura odpowiadamy do 15 minut.",
+    desc: "Wybierasz kanał. W godzinach pracy biura odpowiadamy do 15 minut.",
     bullets: ["Do 15 minut (w godz. pracy)", "Szybki kontekst", "Jasny punkt startu"],
     icon: "💬",
   },
@@ -55,8 +55,8 @@ const defaultSteps: ProcessRoadmapStep[] = [
     number: "02",
     mapLabel: "Minimum danych",
     title: "Minimum danych",
-    desc: "Zbieramy informacje potrzebne do widelki i kolejnego kroku.",
-    bullets: ["Zakres minimum", "Widelki i decyzja", "Bez nadmiaru formalnosci"],
+    desc: "Zbieramy informacje potrzebne do widełek i kolejnego kroku.",
+    bullets: ["Zakres minimum", "Widełki i decyzja", "Bez nadmiaru formalności"],
     icon: "📋",
   },
   {
@@ -64,17 +64,17 @@ const defaultSteps: ProcessRoadmapStep[] = [
     number: "03",
     mapLabel: "Rozpoznanie",
     title: "Rozpoznanie / wizja",
-    desc: "Przy wiekszych zleceniach stan szyb i detali potrafi znaczaco zmienic czas i technologie, dlatego potwierdzamy wycene po rozpoznaniu.",
+    desc: "Przy większych zleceniach stan szyb i detali potrafi znacząco zmienić czas i technologię, dlatego potwierdzamy wycenę po rozpoznaniu.",
     bullets: ["Potwierdzenie technologii", "Korekta wyceny", "Ryzyka i detale"],
-    icon: "✏️",
+    icon: "🔎",
   },
   {
     id: "04",
     number: "04",
     mapLabel: "Przygotowanie",
-    title: "Wejscie + przygotowanie",
-    desc: "Szkolenie na obiekcie, analiza zagrozen, ustalenie zalecanej kolejnosci prac.",
-    bullets: ["Szkolenie i BHP", "Analiza zagrozen", "Kolejnosc prac"],
+    title: "Wejście + przygotowanie",
+    desc: "Szkolenie na obiekcie, analiza zagrożeń, ustalenie zalecanej kolejności prac.",
+    bullets: ["Szkolenie i BHP", "Analiza zagrożeń", "Kolejność prac"],
     icon: "🛠️",
   },
   {
@@ -82,17 +82,17 @@ const defaultSteps: ProcessRoadmapStep[] = [
     number: "05",
     mapLabel: "Realizacja",
     title: "Realizacja + kontrola",
-    desc: "Zanim powiemy gotowe, robimy odbior wewnetrzny checklista.",
-    bullets: ["Checklista odbioru wewnetrznego", "Kontrola jakosci", "Staly nadzor"],
+    desc: "Zanim powiemy gotowe, robimy odbiór wewnętrzny checklistą.",
+    bullets: ["Checklista odbioru wewnętrznego", "Kontrola jakości", "Stały nadzór"],
     icon: "✅",
   },
   {
     id: "06",
     number: "06",
-    mapLabel: "Odbior",
-    title: "Odbior i domkniecie",
-    desc: "Protokoly odbioru i zdjecia, rozliczenie, koniec tematu.",
-    bullets: ["Protokoly + zdjecia + rozliczenie", "Zamkniecie tematu", "Jasny final"],
+    mapLabel: "Odbiór",
+    title: "Odbiór i domknięcie",
+    desc: "Protokoły odbioru i zdjęcia, rozliczenie, koniec tematu.",
+    bullets: ["Protokoły + zdjęcia + rozliczenie", "Zamknięcie tematu", "Jasny finał"],
     icon: "🏁",
   },
 ];
@@ -137,10 +137,10 @@ function buildPinPositions(count: number): PinPosition[] {
 
 export function ProcessRoadmap({
   eyebrow = "PROCES JAKO ROADMAPA",
-  heading = "Jak zamawiasz usluge i jak dowozimy efekt",
-  lead = "6 krokow od kontaktu do efektu - jasno i bez niespodzianek.",
-  ctaLabel = "Zamow oferte do zatwierdzenia",
-  ctaSub = "Gotowa do wyslania do przelozonego / zarzadu / dzialu zakupow",
+  heading = "Jak zamawiasz usługę i jak dowozimy efekt",
+  lead = "6 kroków od kontaktu do efektu - jasno i bez niespodzianek.",
+  ctaLabel = "Zamów ofertę do zatwierdzenia",
+  ctaSub = "Gotowa do wysłania do przełożonego / zarządu / działu zakupów",
   ctaHref = "/kontakt",
   steps: stepsInput = defaultSteps,
   initialActiveId,

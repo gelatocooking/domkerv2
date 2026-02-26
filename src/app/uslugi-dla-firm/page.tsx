@@ -6,7 +6,7 @@ import {
   businessFormalCards,
   businessHero,
   businessLimitsBullets,
-  businessNeedsBullets,
+  businessNeedsPillars,
   businessProcessSteps,
   businessReferencesCards,
   businessScenarioCards,
@@ -43,14 +43,14 @@ export default function BusinessServicesPage() {
         <BusinessHeroSection content={businessHero} />
         <BusinessUseSection cards={businessUseCards} />
         <BusinessAudienceSection cards={businessAudienceCards} />
-        <BusinessNeedsSection bullets={businessNeedsBullets} />
+        <BusinessNeedsSection pillars={businessNeedsPillars} />
         <BusinessScenarioSection cards={businessScenarioCards} />
         <BusinessComplementarySection cards={businessComplementaryCards} />
         <ProcessRoadmap
-          eyebrow="JAK DZIALAMY"
-          heading="Jak zamawiasz usluge i jak dowozimy efekt"
-          lead="Od pierwszego kontaktu do protokolu odbioru - przewidywalnie i bez chaosu."
-          ctaLabel="Przejdz do kontaktu"
+          eyebrow="JAK DZIAŁAMY"
+          heading="Jak zamawiasz usługę i jak dowozimy efekt"
+          lead="Od pierwszego kontaktu do protokołu odbioru - przewidywalnie i bez chaosu."
+          ctaLabel="Przejdź do kontaktu"
           ctaSub="W godzinach biura odpowiadamy zwykle do 15 minut."
           ctaHref="/kontakt"
           steps={roadmapSteps}
@@ -58,8 +58,7 @@ export default function BusinessServicesPage() {
         <BusinessSpeedSection chips={businessSpeedChips} />
         <BusinessFormalSection cards={businessFormalCards} />
         <BusinessReferencesSection cards={businessReferencesCards} />
-        <BusinessLimitsSection bullets={businessLimitsBullets} />
-        <ContactSection />
+        <ContactSection sectionId="minimum-danych" />
         <BusinessOutroSection />
       </main>
     </div>
