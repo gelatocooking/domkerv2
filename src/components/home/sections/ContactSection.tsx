@@ -1,16 +1,20 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./ContactSection.module.css";
-
-const timeWindowOptions = ["Dziś", "Jutro", "W tym tygodniu"];
+import type { ContactSectionContent } from "../types";
 
 type Props = {
   sectionId?: string;
+  content: ContactSectionContent;
 };
 
-export function ContactSection({ sectionId }: Props) {
-  const [timeWindow, setTimeWindow] = useState<string>(timeWindowOptions[0]);
+export function ContactSection({ sectionId, content }: Props) {
+  const initialWindow = content.form.timeWindowOptions[0] ?? "";
+  const [timeWindow, setTimeWindow] = useState<string>(initialWindow);
+  const selectedTimeWindow = content.form.timeWindowOptions.includes(timeWindow)
+    ? timeWindow
+    : initialWindow;
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -40,45 +44,45 @@ export function ContactSection({ sectionId }: Props) {
       data-no-reveal
     >
       <div className={styles["contact-head"]}>
-        <p className={styles["contact-eyebrow"]}>KONTAKT</p>
-        <h2 id="contact-heading">Pilny termin? Zostaw szybkie zgłoszenie</h2>
-        <p>Zbieramy minimum danych i wracamy tego samego dnia z konkretną propozycją.</p>
+        <p className={styles["contact-eyebrow"]}>{content.eyebrow}</p>
+        <h2 id="contact-heading">{content.heading}</h2>
+        <p>{content.lead}</p>
       </div>
 
       <div className={styles["contact-layout"]}>
-        <aside className={styles["contact-hero-card"]} aria-label="Szybkie podsumowanie procesu">
-          <p className={styles["contact-hero-kicker"]}>MINIMUM DANYCH</p>
-          <h3>Krótki formularz. Konkret tego samego dnia.</h3>
-          <p>Podajesz 3-4 informacje. Wracamy z widełkami, terminem i ofertą gotową do zatwierdzenia.</p>
+        <aside className={styles["contact-hero-card"]} aria-label={content.heroAriaLabel}>
+          <p className={styles["contact-hero-kicker"]}>{content.heroKicker}</p>
+          <h3>{content.heroHeading}</h3>
+          <p>{content.heroLead}</p>
           <ul className={styles["contact-hero-points"]}>
-            <li>Widełki + termin po briefie</li>
-            <li>Oferta PDF/HTML do wysłania dalej</li>
-            <li>Minimum danych. Jasny kolejny krok.</li>
+            {content.heroPoints.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
           </ul>
         </aside>
 
         <div className={styles["contact-form-card"]}>
           <form className={styles["contact-form"]} onSubmit={(event) => event.preventDefault()}>
             <label className={styles["contact-field"]}>
-              <span>Telefon</span>
+              <span>{content.form.phoneLabel}</span>
               <input type="tel" name="phone" autoComplete="tel" required />
             </label>
 
             <label className={styles["contact-field"]}>
-              <span>Lokalizacja (miasto)</span>
+              <span>{content.form.cityLabel}</span>
               <input type="text" name="city" autoComplete="address-level2" required />
             </label>
 
             <fieldset className={styles["contact-fieldset"]}>
-              <legend>Okno wejścia</legend>
+              <legend>{content.form.timeWindowLegend}</legend>
               <div className={styles["contact-window-options"]}>
-                {timeWindowOptions.map((option) => (
+                {content.form.timeWindowOptions.map((option) => (
                   <label key={option} className={styles["contact-window-option"]}>
                     <input
                       type="radio"
                       name="window"
                       value={option}
-                      checked={timeWindow === option}
+                      checked={selectedTimeWindow === option}
                       onChange={() => setTimeWindow(option)}
                       required
                     />
@@ -89,37 +93,36 @@ export function ContactSection({ sectionId }: Props) {
             </fieldset>
 
             <fieldset className={styles["contact-consents"]}>
-              <legend>Zgody i prywatność</legend>
+              <legend>{content.form.consentsLegend}</legend>
               <label className={styles["consent-item"]}>
                 <input type="checkbox" name="privacy_ack" required />
                 <span>
-                  Potwierdzam zapoznanie z <a href="/polityka-prywatnosci">Polityką prywatności</a>{" "}
-                  i informacją o przetwarzaniu danych (RODO). *
+                  {content.form.privacyPrefix}
+                  <a href="/polityka-prywatnosci">{content.form.privacyLinkLabel}</a> {content.form.privacySuffix}
                 </span>
               </label>
 
               <label className={styles["consent-item"]}>
                 <input type="checkbox" name="marketing_email" />
-                <span>Wyrażam zgodę na kontakt marketingowy e-mail (opcjonalnie).</span>
+                <span>{content.form.marketingEmailLabel}</span>
               </label>
 
               <label className={styles["consent-item"]}>
                 <input type="checkbox" name="marketing_phone_sms" />
-                <span>Wyrażam zgodę na kontakt marketingowy telefoniczny/SMS (opcjonalnie).</span>
+                <span>{content.form.marketingPhoneSmsLabel}</span>
               </label>
             </fieldset>
 
             <button type="submit" className={styles["contact-cta"]}>
-              <span>Wyślij zgłoszenie</span>
+              <span>{content.form.submitLabel}</span>
               <span className={styles["contact-cta-icon"]} aria-hidden="true">
-                ›
+                {content.form.submitIconLabel}
               </span>
             </button>
-            <p className={styles["contact-meta"]}>W godzinach biura zwykle odpisujemy do 15 minut.</p>
+            <p className={styles["contact-meta"]}>{content.form.meta}</p>
           </form>
         </div>
       </div>
     </section>
   );
 }
-

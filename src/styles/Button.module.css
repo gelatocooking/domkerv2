@@ -1,7 +1,7 @@
 .btn {
   min-height: 48px;
   padding: 0 16px;
-  border-radius: 8px;
+  border-radius: var(--radius-xs);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -15,20 +15,20 @@
 .btnPrimary:visited {
   background-color: var(--accent);
   border-color: transparent;
-  color: #ffffff;
+  color: var(--text-inverse);
 }
 
 .btnPrimary:hover {
-  background-color: #007e79;
+  background-color: var(--accent-700);
   border-color: transparent;
-  color: #ffffff;
+  color: var(--text-inverse);
   box-shadow: 0 10px 20px -20px rgba(16, 43, 29, 0.48);
 }
 
 .btnPrimary:active {
-  background-color: #006f6b;
+  background-color: var(--accent-800);
   border-color: transparent;
-  color: #ffffff;
+  color: var(--text-inverse);
 }
 
 .btnSecondary {
@@ -45,21 +45,21 @@
 .heroMainCta,
 .heroMainCta:link,
 .heroMainCta:visited {
-  background: #00928c !important;
+  background: var(--accent) !important;
   border-color: transparent !important;
-  color: #ffffff !important;
+  color: var(--text-inverse) !important;
 }
 
 .heroMainCta:hover {
-  background: #00706b !important;
+  background: var(--accent-800) !important;
   border-color: transparent !important;
-  color: #ffffff !important;
+  color: var(--text-inverse) !important;
 }
 
 .heroMainCta:active {
-  background: #005e5a !important;
+  background: var(--accent-900) !important;
   border-color: transparent !important;
-  color: #ffffff !important;
+  color: var(--text-inverse) !important;
 }
 
 @media (max-width: 680px) {

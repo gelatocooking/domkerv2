@@ -4,7 +4,7 @@
 }
 
 .home-shell {
-  width: min(1320px, calc(100% - 48px));
+  width: min(var(--container-max), calc(100% - var(--container-pad-desktop)));
   margin: 0 auto;
   padding: 132px 0 56px;
 }
@@ -19,14 +19,14 @@
 
 @media (max-width: 1280px) {
   .home-shell {
-    width: min(100%, calc(100% - 40px));
+    width: min(100%, calc(100% - var(--container-pad-lg)));
     padding-top: 132px;
   }
 }
 
 @media (max-width: 1040px) {
   .home-shell {
-    width: min(100%, calc(100% - 28px));
+    width: min(100%, calc(100% - var(--container-pad-tablet)));
     padding-top: 112px;
   }
 
@@ -43,7 +43,7 @@
 
 @media (max-width: 680px) {
   .home-shell {
-    width: min(100%, calc(100% - 20px));
+    width: min(100%, calc(100% - var(--container-pad-mobile)));
     padding-top: 96px;
     padding-bottom: 24px;
   }

@@ -86,15 +86,16 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
           </Link>
 
           <div className={`${styles["nav-dropdown"]} ${isServicesOpen ? styles["is-open"] : ""}`}>
-            <button
+            
+            <Link href="/uslugi-dla-firm"
               type="button"
               aria-haspopup="true"
               aria-expanded={isServicesOpen}
-              onClick={() => setIsServicesOpen((prev) => !prev)}
-            >
+              onClick={() => setIsServicesOpen((prev) => !prev)}>
+
               Usługi dla firm
               <ChevronDown className={styles["nav-dropdown-chevron"]} aria-hidden="true" />
-            </button>
+            </Link>
             <div className={styles["dropdown-menu"]}>
               {serviceMenu.map((item) => (
                 <Link key={item} href="/kontakt" onClick={closeMenu}>

@@ -1,16 +1,18 @@
-import type { BusinessProblemCard } from "../types";
+import type { BusinessProblemCard, BusinessSectionHeaderContent } from "../types";
 import styles from "./Business.module.css";
 
 type Props = {
   cards: BusinessProblemCard[];
+  content: BusinessSectionHeaderContent;
 };
 
-export function BusinessFormalSection({ cards }: Props) {
+export function BusinessFormalSection({ cards, content }: Props) {
   return (
     <section className={styles["problem-section"]} aria-labelledby="formal-heading">
       <div className={styles["problem-head"]}>
-        <p className={styles["problem-eyebrow"]}>FORMALNOŚCI I ODPOWIEDZIALNOŚĆ</p>
-        <h2 id="formal-heading">To zapewniamy i dokumentujemy po naszej stronie</h2>
+        <p className={styles["problem-eyebrow"]}>{content.eyebrow}</p>
+        <h2 id="formal-heading">{content.heading}</h2>
+        {content.lead && <p className={styles["problem-sublead"]}>{content.lead}</p>}
       </div>
       <div className={styles["problem-grid"]}>
         {cards.map((card) => (

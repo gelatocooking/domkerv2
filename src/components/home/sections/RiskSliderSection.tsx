@@ -3,9 +3,14 @@
 import { ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
 import { useRef } from "react";
 import styles from "./RiskSliderSection.module.css";
-import type { RiskCard } from "../types";
+import type { RiskCard, RiskSliderSectionContent } from "../types";
 
-export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
+type Props = {
+  riskCards: RiskCard[];
+  content: RiskSliderSectionContent;
+};
+
+export function RiskSliderSection({ riskCards, content }: Props) {
   const riskSliderRef = useRef<HTMLDivElement | null>(null);
 
   const scrollRisksByOne = (direction: -1 | 1) => {
@@ -26,19 +31,16 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
     <section className={styles["risk-slider-section"]} aria-labelledby="risk-slider-heading">
       <div className={styles["risk-slider-shell"]}>
         <div className={styles["risk-slider-head"]}>
-          <p className={styles["risk-slider-kicker"]}>RYZYKA I JAK JE GASIMY</p>
-          <h2 id="risk-slider-heading">Jak radzimy sobie z kluczowymi wyzwaniami?</h2>
-          <p>
-            Pokazujemy najczęstsze ryzyka na końcówce budowy i dokładnie jak je domykamy, żeby nie
-            trzeba było gasić pożarów po swojej stronie.
-          </p>
+          <p className={styles["risk-slider-kicker"]}>{content.kicker}</p>
+          <h2 id="risk-slider-heading">{content.heading}</h2>
+          <p>{content.lead}</p>
         </div>
 
-        <div className={styles["risk-slider-controls"]} aria-label="Nawigacja slidera ryzyk">
+        <div className={styles["risk-slider-controls"]} aria-label={content.navAriaLabel}>
           <button
             type="button"
             className={styles["risk-nav-btn"]}
-            aria-label="Poprzednie ryzyko"
+            aria-label={content.prevAriaLabel}
             onClick={() => scrollRisksByOne(-1)}
           >
             <ChevronLeft />
@@ -46,7 +48,7 @@ export function RiskSliderSection({ riskCards }: { riskCards: RiskCard[] }) {
           <button
             type="button"
             className={styles["risk-nav-btn"]}
-            aria-label="Następne ryzyko"
+            aria-label={content.nextAriaLabel}
             onClick={() => scrollRisksByOne(1)}
           >
             <ChevronRight />

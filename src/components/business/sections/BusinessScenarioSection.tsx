@@ -1,19 +1,23 @@
 import { CircleCheck } from "lucide-react";
 import Link from "next/link";
-import type { BusinessScenarioCard } from "../types";
+import type { BusinessScenarioCard, BusinessSectionHeaderContent } from "../types";
 import styles from "./Business.module.css";
 import base from "@/styles/SectionBase.module.css";
 
 type Props = {
   cards: BusinessScenarioCard[];
+  content: BusinessSectionHeaderContent;
 };
 
-export function BusinessScenarioSection({ cards }: Props) {
+export function BusinessScenarioSection({ cards, content }: Props) {
   return (
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="scenario-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>WYBIERZ SCENARIUSZ</p>
-        <h2 id="scenario-heading" className={base.title}>Dopasuj ścieżkę do typu realizacji</h2>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>{content.eyebrow}</p>
+        <h2 id="scenario-heading" className={base.title}>
+          {content.heading}
+        </h2>
+        {content.lead && <p className={base.lead}>{content.lead}</p>}
       </div>
 
       <div className={styles["business-scenario-grid"]}>

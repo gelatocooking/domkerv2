@@ -13,6 +13,20 @@ import {
   businessSpeedChips,
   businessUseCards,
 } from "@/components/business/data";
+import {
+  businessAudienceSectionContent,
+  businessComplementarySectionContent,
+  businessFormalSectionContent,
+  businessLimitsSectionContent,
+  businessNeedsSectionContent,
+  businessOutroContent,
+  businessProcessIcons,
+  businessReferencesSectionContent,
+  businessRoadmapContent,
+  businessScenarioSectionContent,
+  businessSpeedSectionContent,
+  businessUseSectionContent,
+} from "@/components/business/sectionContent";
 import { BusinessFormalSection } from "@/components/business/sections/BusinessFormalSection";
 import { BusinessHeroSection } from "@/components/business/sections/BusinessHeroSection";
 import { BusinessLimitsSection } from "@/components/business/sections/BusinessLimitsSection";
@@ -22,11 +36,10 @@ import { BusinessReferencesSection } from "@/components/business/sections/Busine
 import { BusinessScenarioSection } from "@/components/business/sections/BusinessScenarioSection";
 import { BusinessSpeedSection } from "@/components/business/sections/BusinessSpeedSection";
 import { BusinessUseSection } from "@/components/business/sections/BusinessUseSection";
+import { homeContactContent } from "@/components/home/sectionContent";
 import { ContactSection } from "@/components/home/sections/ContactSection";
 import { ProcessRoadmap } from "@/components/sections/ProcessRoadmap";
 import appShell from "@/styles/AppShell.module.css";
-
-const processIcons = ["💬", "📋", "🔎", "🛠️", "✅", "🏁"];
 
 export default function BusinessServicesPage() {
   const roadmapSteps = businessProcessSteps.map((step, index) => ({
@@ -34,32 +47,38 @@ export default function BusinessServicesPage() {
     title: step.title,
     desc: step.text,
     bullets: [step.text],
-    icon: processIcons[index] ?? "•",
+    icon: businessProcessIcons[index] ?? "•",
   }));
 
   return (
     <div className={appShell["home-page"]}>
       <main className={appShell["home-shell"]}>
         <BusinessHeroSection content={businessHero} />
-        <BusinessUseSection cards={businessUseCards} />
-        <BusinessAudienceSection cards={businessAudienceCards} />
-        <BusinessNeedsSection pillars={businessNeedsPillars} />
-        <BusinessScenarioSection cards={businessScenarioCards} />
-        <BusinessComplementarySection cards={businessComplementaryCards} />
+        <BusinessUseSection cards={businessUseCards} content={businessUseSectionContent} />
+        <BusinessAudienceSection cards={businessAudienceCards} content={businessAudienceSectionContent} />
+        <BusinessNeedsSection pillars={businessNeedsPillars} content={businessNeedsSectionContent} />
+        <BusinessScenarioSection cards={businessScenarioCards} content={businessScenarioSectionContent} />
+        <BusinessComplementarySection
+          cards={businessComplementaryCards}
+          content={businessComplementarySectionContent}
+        />
         <ProcessRoadmap
-          eyebrow="JAK DZIAŁAMY"
-          heading="Jak zamawiasz usługę i jak dowozimy efekt"
-          lead="Od pierwszego kontaktu do protokołu odbioru - przewidywalnie i bez chaosu."
-          ctaLabel="Przejdź do kontaktu"
-          ctaSub="W godzinach biura odpowiadamy zwykle do 15 minut."
-          ctaHref="/kontakt"
+          eyebrow={businessRoadmapContent.eyebrow}
+          heading={businessRoadmapContent.heading}
+          lead={businessRoadmapContent.lead}
+          ctaLabel={businessRoadmapContent.ctaLabel}
+          ctaSub={businessRoadmapContent.ctaSub}
+          ctaHref={businessRoadmapContent.ctaHref}
           steps={roadmapSteps}
         />
-        <BusinessSpeedSection chips={businessSpeedChips} />
-        <BusinessFormalSection cards={businessFormalCards} />
-        <BusinessReferencesSection cards={businessReferencesCards} />
-        <ContactSection sectionId="minimum-danych" />
-        <BusinessOutroSection />
+        <BusinessSpeedSection chips={businessSpeedChips} content={businessSpeedSectionContent} />
+        <BusinessFormalSection cards={businessFormalCards} content={businessFormalSectionContent} />
+        <BusinessReferencesSection
+          cards={businessReferencesCards}
+          content={businessReferencesSectionContent}
+        />
+        <ContactSection sectionId="minimum-danych" content={homeContactContent} />
+        <BusinessOutroSection content={businessOutroContent} />
       </main>
     </div>
   );

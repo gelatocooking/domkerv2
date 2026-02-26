@@ -6,23 +6,33 @@ import buttonStyles from "@/styles/Button.module.css";
 import base from "@/styles/SectionBase.module.css";
 import { ServiceNavIcon } from "../ServiceNavIcon";
 import styles from "./ServicesSection.module.css";
-import type { ServiceEntry, ServiceId } from "../types";
+import type { ServiceEntry, ServiceId, ServicesSectionContent } from "../types";
 
-export function ServicesSection({ servicesCatalog }: { servicesCatalog: ServiceEntry[] }) {
+type Props = {
+  servicesCatalog: ServiceEntry[];
+  content: ServicesSectionContent;
+};
+
+export function ServicesSection({ servicesCatalog, content }: Props) {
   const [activeServiceId, setActiveServiceId] = useState<ServiceId>("post-build");
   const activeService =
     servicesCatalog.find((service) => service.id === activeServiceId) ?? servicesCatalog[0];
 
   return (
-    <section className={`${base.section} ${styles["services-section"]}`} aria-labelledby="services-detailed-heading">
+    <section
+      className={`${base.section} ${styles["services-section"]}`}
+      aria-labelledby="services-detailed-heading"
+    >
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>NASZE USŁUGI</p>
-        <h2 id="services-detailed-heading" className={base.title}>Wybierz usługę i przejdź od problemu do decyzji</h2>
-        <p className={base.lead}>4 ścieżki - każda z jasnym zakresem, logistyką i standardem odbioru.</p>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>{content.eyebrow}</p>
+        <h2 id="services-detailed-heading" className={base.title}>
+          {content.heading}
+        </h2>
+        <p className={base.lead}>{content.lead}</p>
       </div>
 
       <div className={styles["services-layout"]}>
-        <div className={styles["services-switcher"]} role="tablist" aria-label="Wybierz usługę">
+        <div className={styles["services-switcher"]} role="tablist" aria-label={content.tablistAriaLabel}>
           {servicesCatalog.map((service) => (
             <button
               key={service.id}
@@ -41,7 +51,7 @@ export function ServicesSection({ servicesCatalog }: { servicesCatalog: ServiceE
                 <strong>
                   {service.navTitle}
                   {service.id === "post-build" && (
-                    <span className={styles["service-switch-badge"]}>Najczęściej wybierane</span>
+                    <span className={styles["service-switch-badge"]}>{content.popularBadgeLabel}</span>
                   )}
                 </strong>
                 <small>{service.navMeta}</small>
@@ -61,13 +71,16 @@ export function ServicesSection({ servicesCatalog }: { servicesCatalog: ServiceE
           </div>
 
           <div className={styles["service-detail-actions"]}>
-            <Link className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`} href={activeService.primaryCtaHref}>
+            <Link
+              className={`${buttonStyles.btn} ${buttonStyles.btnPrimary}`}
+              href={activeService.primaryCtaHref}
+            >
               {activeService.primaryCtaLabel}
             </Link>
           </div>
 
           <div className={styles["service-audience"]}>
-            <p>Dla kogo?</p>
+            <p>{content.audienceLabel}</p>
             <div className={styles["service-audience-segments"]}>
               {activeService.audienceLinks.map((audience) => (
                 <Link key={audience.href} href={audience.href}>

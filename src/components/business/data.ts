@@ -9,6 +9,7 @@ import type {
 export const businessHero: BusinessHeroContent = {
   label: "B2B - Budowy - Sieci - Lokale handlowe",
   title: "Sprzątanie dla firm i sieci handlowych - pod termin i standard",
+  titleLines: ["Sprzątanie dla firm i", "sieci handlowych pod", "termin i standard"],
   lead:
     "To nie jest opis jednej usługi. To hub współpracy B2B: wybierasz scenariusz, sprawdzasz jak prowadzimy realizacje operacyjnie i przechodzisz do właściwej podstrony.",
   ctaPrimaryLabel: "Odbierz ofertę do zatwierdzenia (PDF/HTML)",
@@ -265,4 +266,3 @@ export const businessProcessSteps = [
     text: "Protokoły odbioru i zdjęcia, rozliczenie, domknięcie tematu bez poprawek.",
   },
 ];
-

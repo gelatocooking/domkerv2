@@ -3,18 +3,20 @@ import styles from "./Business.module.css";
 
 type Props = {
   cards: BusinessProblemCard[];
+  content: {
+    eyebrow: string;
+    heading: string;
+    lead: string;
+  };
 };
 
-export function BusinessAudienceSection({ cards }: Props) {
+export function BusinessAudienceSection({ cards, content }: Props) {
   return (
     <section className={styles["problem-section"]} aria-labelledby="audience-heading">
       <div className={styles["problem-head"]}>
-        <p className={styles["problem-eyebrow"]}>DLA KOGO TO JEST</p>
-        <h2 id="audience-heading">Dla firm, które chcą zdjąć z siebie koordynację realizacji</h2>
-        <p className={styles["problem-sublead"]}>
-          Jeśli potrzebujesz wykonawcy, który bierze odpowiedzialność operacyjną po swojej stronie,
-          jesteś w dobrym miejscu.
-        </p>
+        <p className={styles["problem-eyebrow"]}>{content.eyebrow}</p>
+        <h2 id="audience-heading">{content.heading}</h2>
+        <p className={styles["problem-sublead"]}>{content.lead}</p>
       </div>
 
       <div className={styles["problem-grid"]}>

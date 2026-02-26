@@ -13,7 +13,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #2f6246;
+  color: var(--text-ink);
   font-size: var(--type-small);
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -38,7 +38,7 @@
 }
 
 .timeline-sub {
-  color: #4f6658;
+  color: var(--text-muted);
   font-size: var(--type-body);
   line-height: 1.55;
 }
@@ -47,7 +47,7 @@
   width: fit-content;
   margin: 0 auto;
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-xs);
   border: 1px solid var(--border-subtle);
   color: #335447;
   background: #f4faf6;
@@ -69,7 +69,7 @@
   top: 10px;
   bottom: 10px;
   width: 2px;
-  background: linear-gradient(180deg, #dcebe2 0%, #b8d8c9 100%);
+  background: linear-gradient(180deg, var(--surface-10) 0%, var(--surface-11) 100%);
 }
 
 .timeline-step {
@@ -97,13 +97,13 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #dbeae2;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 1px #cfe2d7;
+  background: var(--surface-9);
+  border: 2px solid var(--bg-surface);
+  box-shadow: 0 0 0 1px var(--border-strong);
 }
 
 .timeline-step.is-active .timeline-dot {
-  background: #00928c;
+  background: var(--accent);
   box-shadow: 0 0 0 6px rgba(0, 146, 140, 0.14);
 }
 
@@ -112,8 +112,8 @@
   gap: 6px;
   padding: 16px;
   border: 1px solid var(--border-subtle);
-  border-radius: 14px;
-  background: #ffffff;
+  border-radius: var(--radius-xs);
+  background: var(--bg-surface);
 }
 
 .timeline-number {
@@ -124,7 +124,7 @@
 
 .timeline-copy strong {
   font-size: var(--type-timeline-title);
-  color: #1f3027;
+  color: var(--text-ink-7);
   font-weight: 600;
 }
 

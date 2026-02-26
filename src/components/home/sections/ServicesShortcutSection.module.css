@@ -3,20 +3,24 @@
   padding-top: 0;
   padding-bottom: 0;
   padding-block: 8px;
+  width: 100%;
 }
 
 .services-shortcut-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-2);
+  align-items: stretch;
 }
 
 .services-shortcut-card {
+  grid-column: span 3;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  min-height: 208px;
+  min-height: 220px;
+  height: 100%;
   padding: 16px;
   border-radius: 0;
   background: transparent;
@@ -45,23 +49,23 @@
 .services-shortcut-pill {
   display: inline-flex;
   width: fit-content;
-  min-height: 24px;
+  min-height: 32px;
   align-items: center;
-  padding: 0 8px;
-  border-radius: 999px;
+  padding: 0 12px;
+  border-radius: var(--radius-xs);
   border: 1px solid var(--border-subtle);
-  background: #f4faf5;
-  color: #007e79;
-  font-size: var(--type-small);
+  background: var(--surface-3);
+  color: var(--accent-700);
+  font-size: 16px;
+  line-height: 1.2;
   font-weight: 600;
   letter-spacing: 0.07em;
 }
 
 .services-shortcut-heading {
   display: grid;
-  grid-template-columns: 40px 1fr;
-  align-items: center;
-  column-gap: 8px;
+  gap: var(--space-1);
+  align-content: start;
 }
 
 .services-shortcut-heading svg {
@@ -69,7 +73,7 @@
   width: 40px;
   height: 40px;
   padding: 8px;
-  border-radius: 11px;
+  border-radius: var(--radius-xs);
   border: 1px solid var(--border-subtle);
   background: linear-gradient(180deg, #fbfefc 0%, #edf4ef 100%);
   color: #3d6b4f;
@@ -86,7 +90,8 @@
 }
 
 .services-shortcut-card p {
-  color: #4d6558;
+  margin-top: 12px;
+  color: var(--text-muted-2);
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -94,7 +99,7 @@
 .services-shortcut-card a {
   margin-top: auto;
   width: fit-content;
-  color: #00928c;
+  color: var(--accent);
   font-size: 0.86rem;
   font-weight: 600;
   border-bottom: 1px solid rgba(0, 146, 140, 0.28);
@@ -105,8 +110,8 @@
     padding-block: 6px;
   }
 
-  .services-shortcut-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .services-shortcut-card {
+    grid-column: span 6;
   }
 
   .services-shortcut-card::after {
@@ -123,8 +128,9 @@
     padding-block: 4px;
   }
 
-  .services-shortcut-grid {
-    grid-template-columns: 1fr;
+  .services-shortcut-card {
+    grid-column: 1 / -1;
+    min-height: 0;
   }
 
   .services-shortcut-card::after {

@@ -1,14 +1,58 @@
 :root {
   --bg-page: #f8fbf7;
   --bg-surface: #ffffff;
+  --surface-2: #f6f7f7;
+  --surface-3: #f4faf5;
+  --surface-4: #edf2ef;
+  --surface-5: #edf7f1;
+  --surface-6: #e8fff3;
+  --surface-7: #eafaf2;
+  --surface-8: #def4eb;
+  --surface-9: #dbeae2;
+  --surface-10: #dcebe2;
+  --surface-11: #b8d8c9;
   --text-main: #112218;
   --text-soft: #4d6456;
+  --text-muted: #4f6658;
+  --text-muted-2: #4d6558;
+  --text-muted-3: #4a6355;
+  --text-muted-4: #4d6457;
+  --text-subtle: #6f7780;
+  --text-subtle-2: #657970;
+  --text-ink: #2f6246;
+  --text-ink-2: #254534;
+  --text-ink-3: #2f4e45;
+  --text-ink-4: #335344;
+  --text-ink-5: #294438;
+  --text-ink-6: #304b3f;
+  --text-ink-7: #1f3027;
+  --text-inverse: #ffffff;
   --accent: #00928c;
-  --accent-strong: #00a29b;
+  --accent-500: #00a29b;
+  --accent-600: #00857f;
+  --accent-700: #007e79;
+  --accent-750: #007771;
+  --accent-800: #006f6b;
+  --accent-900: #005e5a;
   --border: #d8e6db;
   --border-subtle: #e7efea;
   --border-subtle-strong: #dfe9e3;
   --border-subtle-hover: #d7e4dc;
+  --border-strong: #cfe2d7;
+  --shadow-1: 0 10px 24px rgba(18, 33, 24, 0.08);
+  --shadow-2: 0 12px 22px -26px rgba(18, 34, 24, 0.34);
+  --shadow-3: 0 20px 36px -30px rgba(8, 18, 14, 0.68);
+  --radius-xs: 8px;
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
+  --radius-pill: 999px;
+  --container-max: 1320px;
+  --container-pad-desktop: 48px;
+  --container-pad-lg: 40px;
+  --container-pad-tablet: 28px;
+  --container-pad-mobile: 20px;
   --font-family-base: var(--font-geist-sans), "Segoe UI", sans-serif;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -25,7 +69,7 @@
   --type-h2: clamp(2.25rem, 3.6vw, 2.5rem);
   --type-h3: clamp(1.25rem, 2.2vw, 1.5rem);
   --type-body: clamp(1rem, 1.15vw, 1.125rem);
-  --type-small: clamp(1.125rem, 1.2vw, 1.125rem);
+  --type-small: clamp(1rem, 1.15vw, 16px);
   --type-timeline-title: 24px;
   --space-0: 0;
   --space-1: 8px;
@@ -97,5 +141,4 @@ main[data-home-shell] > section[data-reveal][data-reveal-visible="true"] {
     filter: none;
     transition: none;
   }
-
 }

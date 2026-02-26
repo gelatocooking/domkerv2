@@ -11,6 +11,7 @@ export type BusinessHeroPoint = {
 export type BusinessHeroContent = {
   label: string;
   title: string;
+  titleLines?: string[];
   lead: string;
   ctaPrimaryLabel: string;
   ctaPrimaryHref: string;
@@ -50,4 +51,28 @@ export type BusinessScenarioCard = {
 export type BusinessNeedPillar = {
   title: string;
   meta: string;
+};
+
+export type BusinessSectionHeaderContent = {
+  eyebrow: string;
+  heading: string;
+  lead?: string;
+};
+
+export type BusinessNeedsSectionContent = BusinessSectionHeaderContent & {
+  primaryCtaLabel: string;
+  primaryCtaHref: string;
+  secondaryCtaLabel: string;
+  secondaryCtaHref: string;
+};
+
+export type BusinessSpeedSectionContent = BusinessSectionHeaderContent & {
+  footnote: string;
+};
+
+export type BusinessOutroContent = BusinessSectionHeaderContent & {
+  primaryCtaLabel: string;
+  primaryCtaHref: string;
+  secondaryCtaLabel: string;
+  secondaryCtaHref: string;
 };

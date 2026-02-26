@@ -1,19 +1,22 @@
 import Link from "next/link";
-import type { BusinessShortcutCard } from "../types";
+import type { BusinessSectionHeaderContent, BusinessShortcutCard } from "../types";
 import styles from "./Business.module.css";
 import base from "@/styles/SectionBase.module.css";
 
 type Props = {
   cards: BusinessShortcutCard[];
+  content: BusinessSectionHeaderContent;
 };
 
-export function BusinessUseSection({ cards }: Props) {
+export function BusinessUseSection({ cards, content }: Props) {
   return (
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="use-page-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>JAK UŻYĆ TEJ STRONY</p>
-        <h2 id="use-page-heading" className={base.title}>Wybierz scenariusz i przejdź do właściwej ścieżki</h2>
-        <p className={base.lead}>To strona-hub. Tu ustawiasz kierunek i przechodzisz do konkretnej podstrony.</p>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>{content.eyebrow}</p>
+        <h2 id="use-page-heading" className={base.title}>
+          {content.heading}
+        </h2>
+        {content.lead && <p className={base.lead}>{content.lead}</p>}
       </div>
 
       <div className={`${styles["services-shortcut-grid"]} ${styles["business-shortcut-clean"]}`}>

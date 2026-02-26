@@ -10,11 +10,25 @@ type Props = {
 };
 
 export function BusinessHeroSection({ content }: Props) {
+  const titleLines = content.titleLines;
+
   return (
     <section className={`${heroStyles["hero-section"]} ${styles["business-hero"]}`} aria-labelledby="business-hero-title">
       <div className={`${heroStyles["hero-left"]} ${styles["business-hero-left"]}`}>
         <p className={heroStyles["hero-label"]}>{content.label}</p>
-        <h1 id="business-hero-title">{content.title}</h1>
+        <h1 id="business-hero-title" className={styles["business-hero-title"]}>
+          {titleLines?.length ? (
+            <>
+              {titleLines.map((line) => (
+                <span key={line} className={styles["business-hero-title-line"]}>
+                  {line}
+                </span>
+              ))}
+            </>
+          ) : (
+            content.title
+          )}
+        </h1>
         <p className={`${heroStyles["hero-lead"]} ${styles["business-hero-lead"]}`}>{content.lead}</p>
 
         <div className={heroStyles["hero-cta-row"]}>

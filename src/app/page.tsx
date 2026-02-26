@@ -5,6 +5,14 @@ import {
   servicesCatalog,
   serviceShortcutPills,
 } from "@/components/home/data";
+import {
+  homeContactContent,
+  homeHeroContent,
+  homeProblemContent,
+  homeRiskSliderContent,
+  homeServicesContent,
+  homeServicesShortcutContent,
+} from "@/components/home/sectionContent";
 import { HeroSection } from "@/components/home/sections/HeroSection";
 import { ProblemSection } from "@/components/home/sections/ProblemSection";
 import { RiskSliderSection } from "@/components/home/sections/RiskSliderSection";
@@ -20,16 +28,17 @@ export default function Home() {
     <div className={appShell["home-page"]}>
       <main className={appShell["home-shell"]} data-home-shell>
         <HomeMicroInteractions />
-        <HeroSection chips={chips} />
+        <HeroSection chips={chips} content={homeHeroContent} />
         <ServicesShortcutSection
           servicesCatalog={servicesCatalog}
           serviceShortcutPills={serviceShortcutPills}
+          content={homeServicesShortcutContent}
         />
-        <ProblemSection problemCards={problemCards} />
-        <ServicesSection servicesCatalog={servicesCatalog} />
-        <RiskSliderSection riskCards={riskCards} />
+        <ProblemSection problemCards={problemCards} content={homeProblemContent} />
+        <ServicesSection servicesCatalog={servicesCatalog} content={homeServicesContent} />
+        <RiskSliderSection riskCards={riskCards} content={homeRiskSliderContent} />
         <ProcessRoadmap />
-        <ContactSection />
+        <ContactSection content={homeContactContent} />
       </main>
     </div>
   );

@@ -1,19 +1,22 @@
 import Link from "next/link";
-import type { BusinessShortcutCard } from "../types";
+import type { BusinessSectionHeaderContent, BusinessShortcutCard } from "../types";
 import styles from "./Business.module.css";
 import base from "@/styles/SectionBase.module.css";
 
 type Props = {
   cards: BusinessShortcutCard[];
+  content: BusinessSectionHeaderContent;
 };
 
-export function BusinessComplementarySection({ cards }: Props) {
+export function BusinessComplementarySection({ cards, content }: Props) {
   return (
     <section className={`${base.section} ${styles["business-section"]}`} aria-labelledby="complementary-heading">
       <div className={`${base.head} ${styles["services-head"]}`}>
-        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>USŁUGI UZUPEŁNIAJĄCE</p>
-        <h2 id="complementary-heading" className={base.title}>Usługi, które często finalizują temat</h2>
-        <p className={base.lead}>Wybierz usługę uzupełniającą i przejdź do właściwej podstrony.</p>
+        <p className={`${base.eyebrow} ${styles["services-eyebrow"]}`}>{content.eyebrow}</p>
+        <h2 id="complementary-heading" className={base.title}>
+          {content.heading}
+        </h2>
+        {content.lead && <p className={base.lead}>{content.lead}</p>}
       </div>
 
       <div className={`${styles["services-shortcut-grid"]} ${styles["business-shortcut-clean"]}`}>

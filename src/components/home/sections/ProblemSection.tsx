@@ -1,19 +1,21 @@
-import type { ProblemCard } from "../types";
+import type { ProblemCard, ProblemSectionContent } from "../types";
 import styles from "./ProblemSection.module.css";
 
-export function ProblemSection({ problemCards }: { problemCards: ProblemCard[] }) {
+type Props = {
+  problemCards: ProblemCard[];
+  content: ProblemSectionContent;
+};
+
+export function ProblemSection({ problemCards, content }: Props) {
   return (
     <section className={styles["problem-section"]} aria-labelledby="problem-heading">
       <div className={styles["problem-head"]}>
-        <p className={styles["problem-eyebrow"]}>CZY TO BRZMI ZNAJOMO?</p>
-        <h2 id="problem-heading">Rozwiązujemy problemy, z którymi mierzy się Twoja firma</h2>
-        <p className={styles["problem-sublead"]}>
-          Widzieliśmy to setki razy - od codziennych frustracji po bariery, które hamują tempo i
-          przewidywalność realizacji.
-        </p>
+        <p className={styles["problem-eyebrow"]}>{content.eyebrow}</p>
+        <h2 id="problem-heading">{content.heading}</h2>
+        <p className={styles["problem-sublead"]}>{content.lead}</p>
       </div>
 
-      <div className={styles["problem-grid"]} aria-label="Najczęstsze ryzyka">
+      <div className={styles["problem-grid"]} aria-label={content.gridAriaLabel}>
         {problemCards.map((card, index) => (
           <article
             key={card.pill}

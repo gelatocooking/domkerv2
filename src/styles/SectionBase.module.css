@@ -13,7 +13,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: #2f6246;
+  color: var(--text-ink);
   font-size: var(--type-small);
   letter-spacing: 0.1em;
   font-weight: 600;
@@ -33,6 +33,8 @@
 
 .title {
   margin-top: var(--space-2);
+  max-width: 28ch;
+  margin-inline: auto;
   font-size: var(--type-h2);
   line-height: 1.12;
   letter-spacing: -0.025em;
@@ -41,7 +43,7 @@
 
 .lead {
   margin-top: var(--space-2);
-  color: #4f6658;
+  color: var(--text-muted);
   font-size: var(--type-body);
   line-height: 1.55;
 }
