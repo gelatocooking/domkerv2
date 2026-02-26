@@ -4,11 +4,25 @@
   z-index: 20;
   border-bottom: 1px solid var(--border-subtle);
   background: #f8fbf7;
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .is-menu-open {}
 .is-open {}
 .is-visible {}
+.is-stuck {}
+
+.site-header.is-stuck {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.site-header.is-menu-open {
+  background: #f8fbf7;
+  border-bottom-color: var(--border-subtle);
+}
 
 .header-shell {
   width: min(1280px, calc(100% - 48px));

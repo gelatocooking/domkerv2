@@ -14,6 +14,22 @@
   overflow: visible;
 }
 
+.hero-label,
+.hero-left h1,
+.hero-lead,
+.hero-cta-row,
+.trust-strip {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: hero-fade-up 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-label { animation-delay: 0.06s; }
+.hero-left h1 { animation-delay: 0.14s; }
+.hero-lead { animation-delay: 0.22s; }
+.hero-cta-row { animation-delay: 0.3s; }
+.trust-strip { animation-delay: 0.38s; }
+
 .hero-label {
   margin-top: 16px;
   width: fit-content;
@@ -61,6 +77,9 @@
   width: 100%;
   max-width: 460px;
   justify-self: end;
+  opacity: 0;
+  transform: translateY(22px) scale(0.985);
+  animation: hero-photo-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s forwards;
 }
 
 .hero-photo {
@@ -112,6 +131,9 @@
     transform 0.22s ease,
     border-color 0.22s ease,
     background 0.22s ease;
+  opacity: 0;
+  translate: 0 14px;
+  animation: hero-point-in 0.62s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .photo-point-card:hover {
@@ -201,12 +223,14 @@
   left: 16px;
   bottom: 12px;
   transform: rotate(-1.8deg);
+  animation-delay: 0.46s;
 }
 
 .point-2 {
   right: 8px;
   bottom: 102px;
   transform: rotate(1.6deg);
+  animation-delay: 0.54s;
 }
 
 .point-3 {
@@ -214,6 +238,7 @@
   bottom: 206px;
   max-width: 240px;
   transform: rotate(-0.8deg);
+  animation-delay: 0.62s;
 }
 
 .point-4 {
@@ -221,6 +246,42 @@
   bottom: 284px;
   max-width: 230px;
   transform: rotate(2.4deg);
+  animation-delay: 0.7s;
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-photo-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-point-in {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
 }
 
 @media (max-width: 1040px) {
@@ -401,5 +462,21 @@
 
   .point-4 {
     bottom: 136px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-label,
+  .hero-left h1,
+  .hero-lead,
+  .hero-cta-row,
+  .trust-strip,
+  .hero-right,
+  .photo-point-card {
+    opacity: 1;
+    transform: none;
+    translate: 0 0;
+    animation: none;
+    filter: none;
   }
 }

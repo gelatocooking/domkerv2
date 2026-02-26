@@ -43,14 +43,11 @@ export function ContactSection() {
         <aside className={styles["contact-hero-card"]} aria-label="Szybkie podsumowanie procesu">
           <p className={styles["contact-hero-kicker"]}>MINIMUM DANYCH</p>
           <h3>Krotki formularz. Konkret tego samego dnia.</h3>
-          <p>
-            Podajesz 3-4 informacje. Wracamy z widelkami, terminem i oferta gotowa do
-            zatwierdzenia.
-          </p>
+          <p>Podajesz 3-4 informacje. Wracamy z widelkami, terminem i oferta gotowa do zatwierdzenia.</p>
           <ul className={styles["contact-hero-points"]}>
-            <li>Jedno glowne CTA</li>
             <li>Widelki + termin po briefie</li>
             <li>Oferta PDF/HTML do wyslania dalej</li>
+            <li>Minimum danych. Jasny kolejny krok.</li>
           </ul>
         </aside>
 

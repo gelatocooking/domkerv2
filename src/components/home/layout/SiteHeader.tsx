@@ -9,6 +9,7 @@ import styles from "./SiteHeader.module.css";
 export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isStuck, setIsStuck] = useState(false);
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -45,8 +46,22 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
     return () => mediaQuery.removeEventListener("change", listener);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsStuck(window.scrollY > 8);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={`${styles["site-header"]} ${isMenuOpen ? styles["is-menu-open"] : ""}`}>
+    <header
+      className={`${styles["site-header"]} ${isMenuOpen ? styles["is-menu-open"] : ""} ${
+        isStuck ? styles["is-stuck"] : ""
+      }`}
+    >
       <div className={styles["header-shell"]}>
         <Link className={styles.brand} href="/" onClick={closeMenu}>
           <Image src="/domker-logo.png" alt="Domker" width={144} height={42} priority />
