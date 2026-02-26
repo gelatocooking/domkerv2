@@ -26,6 +26,23 @@
   text-align: center;
 }
 
+.contact-head > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.56s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-section.is-visible .contact-head > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-section.is-visible .contact-head > *:nth-child(1) { transition-delay: 0.02s; }
+.contact-section.is-visible .contact-head > *:nth-child(2) { transition-delay: 0.1s; }
+.contact-section.is-visible .contact-head > *:nth-child(3) { transition-delay: 0.18s; }
+
 .contact-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -116,7 +133,62 @@
 .contact-hero-card > * {
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.56s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.contact-section.is-visible .contact-hero-card > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-section.is-visible .contact-hero-card > *:nth-child(1) { transition-delay: 0.1s; }
+.contact-section.is-visible .contact-hero-card > *:nth-child(2) { transition-delay: 0.16s; }
+.contact-section.is-visible .contact-hero-card > *:nth-child(3) { transition-delay: 0.22s; }
+.contact-section.is-visible .contact-hero-card > *:nth-child(4) { transition-delay: 0.28s; }
+
+.contact-hero-points li {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-section.is-visible .contact-hero-points li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-section.is-visible .contact-hero-points li:nth-child(1) { transition-delay: 0.3s; }
+.contact-section.is-visible .contact-hero-points li:nth-child(2) { transition-delay: 0.35s; }
+.contact-section.is-visible .contact-hero-points li:nth-child(3) { transition-delay: 0.4s; }
+
+.contact-form > * {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-section.is-visible .contact-form > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-section.is-visible .contact-form > *:nth-child(1) { transition-delay: 0.16s; }
+.contact-section.is-visible .contact-form > *:nth-child(2) { transition-delay: 0.22s; }
+.contact-section.is-visible .contact-form > *:nth-child(3) { transition-delay: 0.28s; }
+.contact-section.is-visible .contact-form > *:nth-child(4) { transition-delay: 0.34s; }
+.contact-section.is-visible .contact-form > *:nth-child(5) { transition-delay: 0.4s; }
+.contact-section.is-visible .contact-form > *:nth-child(6) { transition-delay: 0.46s; }
 
 .contact-hero-kicker {
   font-size: 0.72rem;
@@ -442,5 +514,16 @@
 
   .contact-cta {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-head > *,
+  .contact-hero-card > *,
+  .contact-hero-points li,
+  .contact-form > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

@@ -32,6 +32,7 @@ export function ContactSection() {
       ref={sectionRef}
       className={`${styles["contact-section"]} ${isVisible ? styles["is-visible"] : ""}`}
       aria-labelledby="contact-heading"
+      data-no-reveal
     >
       <div className={styles["contact-head"]}>
         <p className={styles["contact-eyebrow"]}>KONTAKT</p>

@@ -10,7 +10,10 @@ export function HomeMicroInteractions() {
     const sections = Array.from(root.querySelectorAll<HTMLElement>(":scope > section"));
     if (!sections.length) return;
 
-    sections.forEach((section, index) => {
+    const animatedSections = sections.filter((section) => !section.hasAttribute("data-no-reveal"));
+    if (!animatedSections.length) return;
+
+    animatedSections.forEach((section, index) => {
       section.dataset.reveal = "true";
       section.style.setProperty("--scroll-shift", "0px");
       if (index === 0) section.dataset.revealVisible = "true";
@@ -28,7 +31,7 @@ export function HomeMicroInteractions() {
       { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
     );
 
-    sections.forEach((section, index) => {
+    animatedSections.forEach((section, index) => {
       if (index !== 0) observer.observe(section);
     });
 
@@ -36,7 +39,7 @@ export function HomeMicroInteractions() {
 
     const updateScrollMotion = () => {
       const viewport = window.innerHeight || 1;
-      for (const section of sections) {
+      for (const section of animatedSections) {
         const rect = section.getBoundingClientRect();
         const progress = (viewport - rect.top) / (viewport + rect.height);
         const clamped = Math.max(0, Math.min(1, progress));
@@ -65,4 +68,3 @@ export function HomeMicroInteractions() {
 
   return null;
 }
-
