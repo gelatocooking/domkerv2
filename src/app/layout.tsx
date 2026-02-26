@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { SiteHeader } from "@/components/home/layout/SiteHeader";
+import { serviceMenu } from "@/components/home/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={geistSans.variable}>
+        <SiteHeader serviceMenu={serviceMenu} />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

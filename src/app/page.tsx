@@ -2,25 +2,22 @@ import {
   chips,
   problemCards,
   riskCards,
-  serviceMenu,
   servicesCatalog,
   serviceShortcutPills,
 } from "@/components/home/data";
-import { HeroSection } from "@/components/home/HeroSection";
-import { ProblemSection } from "@/components/home/ProblemSection";
-import { RiskSliderSection } from "@/components/home/RiskSliderSection";
-import { ContactSection } from "@/components/home/ContactSection";
-import { ServicesSection } from "@/components/home/ServicesSection";
-import { ServicesShortcutSection } from "@/components/home/ServicesShortcutSection";
-import { SiteHeader } from "@/components/home/SiteHeader";
+import { HeroSection } from "@/components/home/sections/HeroSection";
+import { ProblemSection } from "@/components/home/sections/ProblemSection";
+import { RiskSliderSection } from "@/components/home/sections/RiskSliderSection";
+import { ContactSection } from "@/components/home/sections/ContactSection";
+import { ServicesSection } from "@/components/home/sections/ServicesSection";
+import { ServicesShortcutSection } from "@/components/home/sections/ServicesShortcutSection";
 import { ProcessRoadmap } from "@/components/sections/ProcessRoadmap";
+import appShell from "@/styles/AppShell.module.css";
 
 export default function Home() {
   return (
-    <div className="home-page">
-      <SiteHeader serviceMenu={serviceMenu} />
-
-      <main className="home-shell">
+    <div className={appShell["home-page"]}>
+      <main className={appShell["home-shell"]}>
         <HeroSection chips={chips} />
         <ServicesShortcutSection
           servicesCatalog={servicesCatalog}

@@ -4,6 +4,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import styles from "./SiteHeader.module.css";
 
 export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,41 +46,41 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
   }, []);
 
   return (
-    <header className={`site-header ${isMenuOpen ? "is-menu-open" : ""}`}>
-      <div className="header-shell">
-        <Link className="brand" href="/" onClick={closeMenu}>
+    <header className={`${styles["site-header"]} ${isMenuOpen ? styles["is-menu-open"] : ""}`}>
+      <div className={styles["header-shell"]}>
+        <Link className={styles.brand} href="/" onClick={closeMenu}>
           <Image src="/domker-logo.png" alt="Domker" width={144} height={42} priority />
         </Link>
 
         <button
           type="button"
-          className="menu-toggle"
+          className={styles["menu-toggle"]}
           aria-expanded={isMenuOpen}
           aria-controls="main-navigation"
-          aria-label={isMenuOpen ? "Zamknij menu" : "Otwórz menu"}
+          aria-label={isMenuOpen ? "Zamknij menu" : "Otworz menu"}
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
-          <span className="menu-toggle-icon" aria-hidden="true">
+          <span className={styles["menu-toggle-icon"]} aria-hidden="true">
             {isMenuOpen ? <X /> : <Menu />}
           </span>
         </button>
 
-        <nav className="main-nav" id="main-navigation" aria-label="Nawigacja główna">
+        <nav className={styles["main-nav"]} id="main-navigation" aria-label="Nawigacja glowna">
           <Link href="/" onClick={closeMenu}>
-            Strona główna
+            Strona glowna
           </Link>
 
-          <div className={`nav-dropdown ${isServicesOpen ? "is-open" : ""}`}>
+          <div className={`${styles["nav-dropdown"]} ${isServicesOpen ? styles["is-open"] : ""}`}>
             <button
               type="button"
               aria-haspopup="true"
               aria-expanded={isServicesOpen}
               onClick={() => setIsServicesOpen((prev) => !prev)}
             >
-              Usługi dla firm
-              <ChevronDown className="nav-dropdown-chevron" aria-hidden="true" />
+              Uslugi dla firm
+              <ChevronDown className={styles["nav-dropdown-chevron"]} aria-hidden="true" />
             </button>
-            <div className="dropdown-menu">
+            <div className={styles["dropdown-menu"]}>
               {serviceMenu.map((item) => (
                 <Link key={item} href="/kontakt" onClick={closeMenu}>
                   {item}
@@ -103,19 +104,19 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
           <Link href="/kontakt" onClick={closeMenu}>
             Kontakt
           </Link>
-          <Link className="main-nav-cta" href="/kontakt" onClick={closeMenu}>
-            Bezpłatna konsultacja
+          <Link className={styles["main-nav-cta"]} href="/kontakt" onClick={closeMenu}>
+            Bezplatna konsultacja
           </Link>
         </nav>
 
-        <Link className="header-cta" href="/kontakt" onClick={closeMenu}>
-          Bezpłatna konsultacja
+        <Link className={styles["header-cta"]} href="/kontakt" onClick={closeMenu}>
+          Bezplatna konsultacja
         </Link>
       </div>
 
       <button
         type="button"
-        className={`header-backdrop ${isMenuOpen ? "is-visible" : ""}`}
+        className={`${styles["header-backdrop"]} ${isMenuOpen ? styles["is-visible"] : ""}`}
         aria-hidden={!isMenuOpen}
         tabIndex={isMenuOpen ? 0 : -1}
         onClick={closeMenu}
@@ -123,4 +124,3 @@ export function SiteHeader({ serviceMenu }: { serviceMenu: string[] }) {
     </header>
   );
 }
-

@@ -1,0 +1,77 @@
+.btn {
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.btnPrimary,
+.btnPrimary:link,
+.btnPrimary:visited {
+  background-color: var(--accent);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.btnPrimary:hover {
+  background-color: #007e79;
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 10px 20px -20px rgba(16, 43, 29, 0.48);
+}
+
+.btnPrimary:active {
+  background-color: #006f6b;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.btnSecondary {
+  border-color: var(--border-subtle);
+  background: var(--bg-surface);
+}
+
+.btnSecondary:hover {
+  border-color: var(--border-subtle);
+  box-shadow: 0 8px 20px -20px rgba(16, 43, 29, 0.45);
+  background: #f7fbf8;
+}
+
+.heroMainCta,
+.heroMainCta:link,
+.heroMainCta:visited {
+  background: #00928c !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.heroMainCta:hover {
+  background: #00706b !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.heroMainCta:active {
+  background: #005e5a !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 680px) {
+  .btn,
+  .btnSecondary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .btn {
+    min-height: 44px;
+    font-size: 0.82rem;
+  }
+}

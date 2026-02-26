@@ -1,0 +1,405 @@
+.hero-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  padding-block: 4px 0;
+}
+
+.hero-left {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  overflow: visible;
+}
+
+.hero-label {
+  margin-top: 16px;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  color: #335344;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-left h1 {
+  max-width: 16ch;
+  font-size: var(--type-h1);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  font-weight: var(--font-weight-bold);
+}
+
+.hero-lead {
+  max-width: 54ch;
+  color: var(--text-soft);
+  line-height: 1.65;
+  font-size: var(--type-body);
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.trust-strip {
+  font-size: 15px;
+  color: #2f4e45;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.hero-right {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  justify-self: end;
+}
+
+.hero-photo {
+  position: relative;
+  aspect-ratio: 1.1 / 1;
+  min-height: 0;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  background-image: url("/hero.png");
+  background-position: center 18%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 24px rgba(18, 33, 24, 0.08);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 146, 140, 0) 22%,
+    rgba(0, 146, 140, 0.52) 66%,
+    rgba(0, 146, 140, 0.86) 100%
+  );
+}
+
+.hero-photo-points {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.photo-point-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 260px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(7, 21, 14, 0.66), rgba(11, 31, 20, 0.48));
+  color: #eff7f2;
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.photo-point-card:hover {
+  transform: scale(1.035);
+  border-color: rgba(255, 255, 255, 0.34);
+  background: linear-gradient(145deg, rgba(9, 25, 16, 0.74), rgba(13, 36, 23, 0.56));
+}
+
+.photo-point-card p {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.photo-point-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: #00928c;
+  color: #ffffff;
+}
+
+.photo-point-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.3;
+}
+
+.photo-point-card::after {
+  content: "";
+  position: absolute;
+  top: -140%;
+  left: -30%;
+  width: 24%;
+  height: 380%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.34) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(20deg);
+  opacity: 0;
+  animation: point-light-pass 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.point-1::after {
+  animation-delay: 0s;
+}
+
+.point-2::after {
+  animation-delay: 2s;
+}
+
+.point-3::after {
+  animation-delay: 4s;
+}
+
+.point-4::after {
+  animation-delay: 6s;
+}
+
+@keyframes point-light-pass {
+  0%,
+  100% {
+    left: -30%;
+    opacity: 0;
+  }
+  7% {
+    opacity: 0.9;
+  }
+  16% {
+    left: 118%;
+    opacity: 0;
+  }
+  17% {
+    left: -30%;
+    opacity: 0;
+  }
+}
+
+.point-1 {
+  left: 16px;
+  bottom: 12px;
+  transform: rotate(-1.8deg);
+}
+
+.point-2 {
+  right: 8px;
+  bottom: 102px;
+  transform: rotate(1.6deg);
+}
+
+.point-3 {
+  left: 26px;
+  bottom: 206px;
+  max-width: 240px;
+  transform: rotate(-0.8deg);
+}
+
+.point-4 {
+  right: 26px;
+  bottom: 284px;
+  max-width: 230px;
+  transform: rotate(2.4deg);
+}
+
+@media (max-width: 1040px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-left h1 {
+    max-width: 100%;
+  }
+
+  .hero-photo {
+    aspect-ratio: 1 / 1;
+    background-position: center 12%;
+  }
+
+  .hero-right {
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .photo-point-card {
+    max-width: 220px;
+    padding: 8px 8px;
+  }
+
+  .photo-point-card p {
+    font-size: 0.88rem;
+  }
+
+  .point-1 {
+    left: 8px;
+    bottom: 8px;
+  }
+
+  .point-2 {
+    right: 8px;
+    bottom: 78px;
+  }
+
+  .point-3 {
+    left: 16px;
+    bottom: 156px;
+  }
+
+  .point-4 {
+    right: 16px;
+    bottom: 208px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-photo {
+    aspect-ratio: 1 / 1.04;
+  }
+
+  .photo-point-card {
+    max-width: 62%;
+    padding: 8px 9px;
+  }
+
+  .point-2 {
+    bottom: 64px;
+  }
+
+  .point-3 {
+    left: 8px;
+    bottom: 126px;
+  }
+
+  .point-4 {
+    right: 8px;
+    bottom: 176px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-left h1 {
+    font-size: clamp(1.95rem, 9.3vw, 2.6rem);
+  }
+
+  .hero-lead {
+    font-size: 0.98rem;
+  }
+
+  .hero-label {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .hero-cta-row {
+    width: 100%;
+  }
+
+  .trust-strip {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .hero-photo {
+    background-position: center 10%;
+  }
+
+  .photo-point-card {
+    max-width: 58%;
+    padding: 7px 8px;
+    gap: 7px;
+  }
+
+  .point-2 {
+    bottom: 56px;
+  }
+
+  .point-3 {
+    bottom: 108px;
+  }
+
+  .point-4 {
+    bottom: 152px;
+  }
+
+  .photo-point-card p {
+    font-size: 0.82rem;
+    line-height: 1.3;
+  }
+
+  .photo-point-icon {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero-label {
+    font-size: 11px;
+  }
+
+  .hero-left h1 {
+    font-size: clamp(1.6rem, 11vw, 2rem);
+    line-height: 1.08;
+  }
+
+  .hero-lead {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .hero-photo {
+    aspect-ratio: 1 / 1.14;
+    background-position: center 14%;
+  }
+
+  .photo-point-card {
+    max-width: 64%;
+    padding: 6px 7px;
+    border-radius: 8px;
+  }
+
+  .photo-point-card p {
+    font-size: 0.74rem;
+    line-height: 1.25;
+  }
+
+  .photo-point-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .point-2 {
+    bottom: 52px;
+  }
+
+  .point-3 {
+    bottom: 98px;
+  }
+
+  .point-4 {
+    bottom: 136px;
+  }
+}

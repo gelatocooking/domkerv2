@@ -1,6 +1,8 @@
 ﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
+import base from "@/styles/SectionBase.module.css";
+import styles from "./TimelineSection.module.css";
 
 type Step = {
   title: string;
@@ -78,21 +80,21 @@ export function TimelineSection({ steps = defaultSteps }: Props) {
   }, [steps.length]);
 
   return (
-    <section className="timeline-section" aria-labelledby="timeline-heading">
-      <div className="timeline-head">
-        <p className="timeline-eyebrow">JAK DZIALAMY</p>
-        <h2 id="timeline-heading">Jak zamawiasz usluge i jak dowozimy efekt</h2>
-        <p className="timeline-sub">
+    <section className={`${base.section} ${styles["timeline-section"]}`} aria-labelledby="timeline-heading">
+      <div className={`${base.head} ${styles["timeline-head"]}`}>
+        <p className={`${base.eyebrow} ${styles["timeline-eyebrow"]}`}>JAK DZIALAMY</p>
+        <h2 id="timeline-heading" className={base.title}>Jak zamawiasz usluge i jak dowozimy efekt</h2>
+        <p className={`${base.lead} ${styles["timeline-sub"]}`}>
           Od pierwszego kontaktu do protokolu odbioru - przewidywalnie i bez chaosu.
         </p>
       </div>
 
-      <div className="timeline-trust">
+      <div className={styles["timeline-trust"]}>
         Odpowiedz do 15 min • Protokoly i zdjecia • Odbior checklista
       </div>
 
-      <div className="timeline-steps" role="list" aria-label="Kroki procesu">
-        <span className="timeline-line" aria-hidden="true" />
+      <div className={styles["timeline-steps"]} role="list" aria-label="Kroki procesu">
+        <span className={styles["timeline-line"]} aria-hidden="true" />
         {steps.map((step, index) => {
           const number = String(index + 1).padStart(2, "0");
           const isActive = index === activeIndex;
@@ -104,14 +106,14 @@ export function TimelineSection({ steps = defaultSteps }: Props) {
               ref={(node) => {
                 itemRefs.current[index] = node;
               }}
-              className={`timeline-step ${isActive ? "is-active" : ""} ${
-                isVisible ? "is-visible" : ""
+              className={`${styles["timeline-step"]} ${isActive ? styles["is-active"] : ""} ${
+                isVisible ? styles["is-visible"] : ""
               }`}
               role="listitem"
             >
-              <span className="timeline-dot" aria-hidden="true" />
-              <span className="timeline-copy">
-                <span className="timeline-number">{number}</span>
+              <span className={styles["timeline-dot"]} aria-hidden="true" />
+              <span className={styles["timeline-copy"]}>
+                <span className={styles["timeline-number"]}>{number}</span>
                 <strong>{step.title}</strong>
                 {step.text && <small>{step.text}</small>}
               </span>
@@ -120,7 +122,7 @@ export function TimelineSection({ steps = defaultSteps }: Props) {
         })}
       </div>
 
-      <div className="timeline-wave" aria-hidden="true" />
+      <div className={styles["timeline-wave"]} aria-hidden="true" />
     </section>
   );
 }

@@ -1,8 +1,18 @@
-﻿"use client";
+"use client";
 
 import { useMemo, useState } from "react";
 import type { KeyboardEvent } from "react";
 import styles from "./ProcessRoadmap.module.css";
+
+export type ProcessRoadmapStep = {
+  id?: string;
+  number?: string;
+  mapLabel: string;
+  title: string;
+  desc: string;
+  bullets: string[];
+  icon: string;
+};
 
 type Step = {
   id: string;
@@ -19,7 +29,18 @@ type PinPosition = {
   y: number;
 };
 
-const steps: Step[] = [
+export type ProcessRoadmapProps = {
+  eyebrow?: string;
+  heading?: string;
+  lead?: string;
+  ctaLabel?: string;
+  ctaSub?: string;
+  ctaHref?: string;
+  steps?: ProcessRoadmapStep[];
+  initialActiveId?: string;
+};
+
+const defaultSteps: ProcessRoadmapStep[] = [
   {
     id: "01",
     number: "01",
@@ -35,7 +56,7 @@ const steps: Step[] = [
     mapLabel: "Minimum danych",
     title: "Minimum danych",
     desc: "Zbieramy informacje potrzebne do widelki i kolejnego kroku.",
-    bullets: ["Zakres minimum", "Widełki i decyzja", "Bez nadmiaru formalnosci"],
+    bullets: ["Zakres minimum", "Widelki i decyzja", "Bez nadmiaru formalnosci"],
     icon: "📋",
   },
   {
@@ -43,7 +64,7 @@ const steps: Step[] = [
     number: "03",
     mapLabel: "Rozpoznanie",
     title: "Rozpoznanie / wizja",
-    desc: "Przy wiekszych zleceniach stan szyb i detali potrafi znacząco zmienic czas i technologie, dlatego potwierdzamy wycene po rozpoznaniu.",
+    desc: "Przy wiekszych zleceniach stan szyb i detali potrafi znaczaco zmienic czas i technologie, dlatego potwierdzamy wycene po rozpoznaniu.",
     bullets: ["Potwierdzenie technologii", "Korekta wyceny", "Ryzyka i detale"],
     icon: "✏️",
   },
@@ -76,7 +97,10 @@ const steps: Step[] = [
   },
 ];
 
-const pinPositions: PinPosition[] = [
+const PATH_D =
+  "M 60 288 C 80 200 120 175 180 200 C 240 220 280 140 380 72 C 440 40 540 40 620 72 C 700 108 760 168 800 184 C 840 198 875 238 900 288";
+
+const DEFAULT_PIN_POSITIONS: PinPosition[] = [
   { x: 6, y: 72 },
   { x: 18, y: 50 },
   { x: 38, y: 18 },
@@ -85,15 +109,50 @@ const pinPositions: PinPosition[] = [
   { x: 90, y: 72 },
 ];
 
-const PATH_D =
-  "M 60 288 C 80 200 120 175 180 200 C 240 220 280 140 380 72 C 440 40 540 40 620 72 C 700 108 760 168 800 184 C 840 198 875 238 900 288";
+function normalizeSteps(input: ProcessRoadmapStep[]): Step[] {
+  return input.map((step, index) => {
+    const number = step.number ?? String(index + 1).padStart(2, "0");
+    return {
+      id: step.id ?? number,
+      number,
+      mapLabel: step.mapLabel,
+      title: step.title,
+      desc: step.desc,
+      bullets: step.bullets,
+      icon: step.icon,
+    };
+  });
+}
 
-export function ProcessRoadmap() {
-  const [activeId, setActiveId] = useState<string>("01");
+function buildPinPositions(count: number): PinPosition[] {
+  if (count === DEFAULT_PIN_POSITIONS.length) return DEFAULT_PIN_POSITIONS;
+  if (count <= 1) return [{ x: 50, y: 46 }];
+  return Array.from({ length: count }, (_, index) => {
+    const t = index / (count - 1);
+    const x = 6 + t * 84;
+    const y = 46 + Math.sin(t * Math.PI * 2 - Math.PI / 2) * 26;
+    return { x, y };
+  });
+}
+
+export function ProcessRoadmap({
+  eyebrow = "PROCES JAKO ROADMAPA",
+  heading = "Jak zamawiasz usluge i jak dowozimy efekt",
+  lead = "6 krokow od kontaktu do efektu - jasno i bez niespodzianek.",
+  ctaLabel = "Zamow oferte do zatwierdzenia",
+  ctaSub = "Gotowa do wyslania do przelozonego / zarzadu / dzialu zakupow",
+  ctaHref = "/kontakt",
+  steps: stepsInput = defaultSteps,
+  initialActiveId,
+}: ProcessRoadmapProps = {}) {
+  const steps = useMemo(() => normalizeSteps(stepsInput), [stepsInput]);
+  const firstId = steps[0]?.id ?? "01";
+  const [activeId, setActiveId] = useState<string>(initialActiveId ?? firstId);
+  const pinPositions = useMemo(() => buildPinPositions(steps.length), [steps.length]);
 
   const activeStep = useMemo<Step>(
     () => steps.find((step) => step.id === activeId) ?? steps[0],
-    [activeId],
+    [activeId, steps],
   );
 
   const activeIndex = steps.findIndex((step) => step.id === activeId);
@@ -105,12 +164,14 @@ export function ProcessRoadmap() {
     }
   };
 
+  if (!steps.length || !activeStep) return null;
+
   return (
     <section className={styles.roadmap}>
       <div className={styles.header}>
-        <p className={styles.eyebrow}>PROCES JAKO ROADMAPA</p>
-        <h2 className={styles.heading}>Jak zamawiasz usluge i jak dowozimy efekt</h2>
-        <p className={styles.lead}>6 krokow od kontaktu do efektu - jasno i bez niespodzianek.</p>
+        <p className={styles.eyebrow}>{eyebrow}</p>
+        <h2 className={styles.heading}>{heading}</h2>
+        <p className={styles.lead}>{lead}</p>
       </div>
 
       <div className={styles.desktopLayout}>
@@ -232,12 +293,10 @@ export function ProcessRoadmap() {
       </div>
 
       <div className={styles.cta}>
-        <a href="/kontakt" className={styles.ctaBtn}>
-          Zamow oferte do zatwierdzenia
+        <a href={ctaHref} className={styles.ctaBtn}>
+          {ctaLabel}
         </a>
-        <span className={styles.ctaSub}>
-          Gotowa do wyslania do przelozonego / zarzadu / dzialu zakupow
-        </span>
+        <span className={styles.ctaSub}>{ctaSub}</span>
       </div>
     </section>
   );

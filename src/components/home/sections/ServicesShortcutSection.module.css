@@ -1,0 +1,150 @@
+.services-shortcut {
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-block: 8px;
+}
+
+.services-shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.services-shortcut-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-height: 208px;
+  padding: 16px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.services-shortcut-card::after {
+  content: "";
+  position: absolute;
+  top: 12%;
+  right: -6px;
+  width: 1px;
+  height: 76%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 146, 140, 0) 0%,
+    rgba(0, 146, 140, 0.2) 22%,
+    rgba(0, 146, 140, 0.22) 78%,
+    rgba(0, 146, 140, 0) 100%
+  );
+}
+
+.services-shortcut-card:last-child::after {
+  display: none;
+}
+
+.services-shortcut-pill {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: #f4faf5;
+  color: #007e79;
+  font-size: var(--type-small);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+}
+
+.services-shortcut-heading {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.services-shortcut-heading svg {
+  margin-top: 0;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 11px;
+  border: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, #fbfefc 0%, #edf4ef 100%);
+  color: #3d6b4f;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 2px 6px rgba(18, 34, 24, 0.06);
+}
+
+.services-shortcut-heading h3 {
+  margin: 0;
+  font-size: clamp(1.06rem, 1.45vw, 1.24rem);
+  line-height: 1.28;
+  font-weight: var(--font-weight-semibold);
+}
+
+.services-shortcut-card p {
+  color: #4d6558;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.services-shortcut-card a {
+  margin-top: auto;
+  width: fit-content;
+  color: #00928c;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 146, 140, 0.28);
+}
+
+@media (max-width: 1040px) {
+  .services-shortcut {
+    padding-block: 6px;
+  }
+
+  .services-shortcut-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-shortcut-card::after {
+    display: none;
+  }
+
+  .services-shortcut-card:not(:nth-child(2n)):not(:last-child)::after {
+    display: block;
+  }
+}
+
+@media (max-width: 680px) {
+  .services-shortcut {
+    padding-block: 4px;
+  }
+
+  .services-shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-shortcut-card::after {
+    display: block;
+    top: auto;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 146, 140, 0) 0%,
+      rgba(0, 146, 140, 0.22) 18%,
+      rgba(0, 146, 140, 0.22) 82%,
+      rgba(0, 146, 140, 0) 100%
+    );
+  }
+
+  .services-shortcut-card:last-child::after {
+    display: none;
+  }
+}
